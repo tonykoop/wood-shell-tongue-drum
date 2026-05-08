@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wood Shell Tongue Drum — Heifer Zephyr Instruments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f3ec;
+    --panel: #fffaf0;
+    --ink: #2b2417;
+    --rule: #d6cfb8;
+    --accent: #6b4f2c;
+    --hot: #b8541c;
+    --muted: #7a6650;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header.hero {
+    padding: 60px 24px 40px;
+    background: linear-gradient(180deg, #fff 0%, #f7f3ec 100%);
+    border-bottom: 2px solid var(--accent);
+  }
+  .hero-inner { max-width: 980px; margin: 0 auto; }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 48px;
+    margin: 14px 0 14px 0;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+  .lede {
+    font-size: 19px;
+    max-width: 720px;
+    color: var(--ink);
+  }
+  .pill {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-top: 8px;
+  }
+  .pill.hot { background: var(--hot); color: #fff; border-color: var(--hot); }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 24px 80px; }
+  section { padding: 32px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0 0 14px 0;
+    color: var(--ink);
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  p { margin: 8px 0 14px 0; }
+  code, pre, kbd { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  code { background: var(--panel); padding: 1px 5px; border-radius: 3px; color: var(--accent); }
+  pre {
+    background: var(--panel);
+    padding: 14px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--rule);
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 22px 0;
+    font-size: 14px;
+  }
+  th, td {
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--panel);
+    font-weight: 600;
+    color: var(--accent);
+  }
+  td.num { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .hero-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--panel);
+    margin: 24px 0;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 14px 0;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .card h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+  .card .meta { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  ul.tight { margin: 6px 0; padding-left: 22px; }
+  ul.tight li { margin-bottom: 4px; }
+  .callout {
+    background: var(--panel);
+    border-left: 4px solid var(--hot);
+    padding: 12px 18px;
+    margin: 16px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--hot);
+    font-weight: 600;
+  }
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--accent);
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  a { color: var(--hot); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+  }
+  @media (max-width: 720px) {
+    h1 { font-size: 34px; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="wordmark">Heifer Zephyr Instruments</div>
+    <h1>Wood Shell Tongue Drum</h1>
+    <p class="lede">Slit-tongue idiophone with an enclosed wooden resonator — round-body counterpart to the rectangular wood tongue drum, with Helmholtz cavity coupling absent from open designs. Four geometric variants × three size envelopes.</p>
+    <div>
+      <span class="pill hot">★ V1 Standard 16″ — recommended first build</span>
+      <span class="pill">A Kurd, 11 tongues</span>
+      <span class="pill">Padauk soundboard</span>
+      <span class="pill">Black Walnut shell</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>Hero — V1 Standard 16″ Section A-A</h2>
+  <img class="hero-image" src="../drawings/00-hero-v1-standard.svg" alt="Cross-section drawing of the V1 cylinder + flat-top wood shell tongue drum">
+  <p>Recommended first prototype. Cylinder body in Black Walnut staves; flat Padauk soundboard with 11 slit tongues in A Kurd; gu port on bottom for Helmholtz tuning. Dimensions on the drawing are computed from the parametric workbook — change a preset cell, regenerate the drawing.</p>
+</section>
+
+<section>
+  <h2>Design intent</h2>
+  <p>Three things distinguish this design from a wooden version of a Hapi-style steel tongue drum:</p>
+  <ol class="tight">
+    <li><strong>Round body, not rectangular.</strong> Tony's existing rectangular-prism wood tongue drum is the precursor; this design moves the same physics onto a turned cylinder or hemisphere bowl.</li>
+    <li><strong>Enclosed cavity.</strong> Open rectangular tongue drums waste cavity volume out the open ends. The closed bowl puts a Helmholtz resonator under the tongue field — bass extension below the lowest tongue.</li>
+    <li><strong>Premium tonewoods.</strong> Padauk soundboard for the A4 reference, Black Walnut shell for the bowl. No commercial wood tongue drums exist in this round-body × dome-top × premium-tonewood format at this design depth.</li>
+  </ol>
+  <p>The four-variant matrix exists so the same shop process produces four distinct portfolio pieces with progressively retired risk. V1 first; V4 last.</p>
+</section>
+
+<section>
+  <h2>Family overview</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h4>V1 — Cylinder + Flat Top ★</h4>
+      <div class="meta">Risk ★★ &nbsp;&middot;&nbsp; Build first</div>
+      <p>Lowest piece-count, most predictable tuning. 16 staves at 11.25° miter; flat Padauk disc; rabbet joint into shell rim. Standard 16″ is the sweet spot of the matrix — Helmholtz/ding ratio 0.88, all 11 tongues fit cleanly.</p>
+    </div>
+    <div class="card">
+      <h4>V2 — Cylinder + Domed Top</h4>
+      <div class="meta">Risk ★★★ &nbsp;&middot;&nbsp; Build second</div>
+      <p>Same shell as V1; CNC-domed Padauk soundboard. Curved-cantilever +2.5 % length correction is the dominant uncertainty — calibrate one tongue first.</p>
+    </div>
+    <div class="card">
+      <h4>V3 — Hemisphere Bowl + Flat Top</h4>
+      <div class="meta">Risk ★★ &nbsp;&middot;&nbsp; Build third</div>
+      <p>Tagine / Moroccan-pouf silhouette. Segmented bowl ring stack of decreasing diameters; flat Padauk disc cap. Bowl projects sound upward as a parabolic reflector.</p>
+    </div>
+    <div class="card">
+      <h4>V4 — Hemisphere + Domed Top</h4>
+      <div class="meta">Risk ★★★★ &nbsp;&middot;&nbsp; Build last</div>
+      <p>Most steel-tongue-drum-adjacent silhouette in wood. Highest piece-count + highest empirical tuning risk. Combines V2 dome + V3 bowl — both calibrations from earlier phases roll forward.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Helmholtz coupling matrix</h2>
+  <p>Each cell is the predicted Helmholtz frequency over the size's ding frequency, with the gu port at the preset diameter. <strong>Coupled regime: 0.80 ≤ ratio ≤ 1.20.</strong> All values are derived estimates; first-prototype measurements will retire the uncertainty.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Variant</th>
+        <th>Travel 12″</th>
+        <th>Standard 16″</th>
+        <th>Floor Pouf 20″</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>V1 — Cyl + Flat</td>
+        <td class="num">1.09 (tight)</td>
+        <td class="num"><strong>0.88 ★</strong></td>
+        <td class="num"><strong>0.99</strong></td>
+      </tr>
+      <tr>
+        <td>V2 — Cyl + Dome</td>
+        <td class="num">0.75</td>
+        <td class="num">0.61 (under)</td>
+        <td class="num">0.67 (under)</td>
+      </tr>
+      <tr>
+        <td>V3 — Hemi + Flat</td>
+        <td class="num">1.22 (over)</td>
+        <td class="num"><strong>1.08</strong></td>
+        <td class="num">1.21 (edge)</td>
+      </tr>
+      <tr>
+        <td>V4 — Hemi + Dome</td>
+        <td class="num">0.83</td>
+        <td class="num">0.73</td>
+        <td class="num">0.81</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <span class="label">Reading the matrix</span>
+    <p>V1 Standard and V1 Floor Pouf sit cleanly in the coupled band. V3 Standard is also coupled. V2 cells are under-coupled because the dome adds neck length without proportional volume; the gu port gets <em>smaller</em> than the preset on those builds (in-shop tuning protocol — Phase 4 of the assembly manual).</p>
+  </div>
+</section>
+
+<section>
+  <h2>Recommended first prototype</h2>
+  <p><strong>V1 Cylinder + Flat Top, Standard 16″, A Kurd.</strong> Justification:</p>
+  <ul class="tight">
+    <li>Acoustic predictability — flat-cantilever physics has &lt; 1 % empirical detuning on Tony's prior rectangular drums.</li>
+    <li>Helmholtz coupled out-of-the-box at 0.88 × ding.</li>
+    <li>All 11 tongues fit with 8 % margin on the radial cap.</li>
+    <li>Lowest piece-count: 16 staves + 1 disc = 17 wood pieces.</li>
+    <li>Validated workflow components — stave glue-up, lathe truing, CNC slit routing — exercised on Tony's existing ashiko, conga, and tongue-drum repos.</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr><th>Shell OD</th><td class="num">16.000″</td></tr>
+      <tr><th>Shell height</th><td class="num">8.000″</td></tr>
+      <tr><th>Wall thickness</th><td class="num">0.625″</td></tr>
+      <tr><th>Soundboard</th><td>Padauk, 0.375″, 16″ disc</td></tr>
+      <tr><th>Shell wood</th><td>Black Walnut, 16 staves at 11.25° miter</td></tr>
+      <tr><th>Scale</th><td>A Kurd (A3, B3, C4, D4, E4, F4, G4, A4, B4, C5, D5)</td></tr>
+      <tr><th>Ding</th><td>A3 (220.00 Hz), centered</td></tr>
+      <tr><th>Tongue length (ding)</th><td class="num">6.454″</td></tr>
+      <tr><th>Gu port</th><td class="num">2.5″ initial</td></tr>
+      <tr><th>Predicted f<sub>H</sub></th><td class="num">194.6 Hz (0.88 × ding)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Build packet</h2>
+  <p>This site is one of three recruiter-facing artifacts. The packet at the repo root is the engineering source of truth.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h4>Engineering</h4>
+      <ul class="tight">
+        <li><a href="../design.md">design.md</a> — governing model, variant blocks, prototype spec</li>
+        <li><a href="../wood-shell-tongue-drum-design-table.xlsx">design-table.xlsx</a> — parametric workbook (190 formulas)</li>
+        <li><a href="../risks.md">risks.md</a> — red-team pass with verification tests</li>
+        <li><a href="../wolfram-starter.wl">wolfram-starter.wl</a> — 3-DOF coupled oscillator notebook</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Procurement &amp; manufacturing</h4>
+      <ul class="tight">
+        <li><a href="../bom.csv">bom.csv</a> — full parts list with cost rollup</li>
+        <li><a href="../sourcing.csv">sourcing.csv</a> — supplier mapping with verified pricing dates</li>
+        <li><a href="../cut-list.csv">cut-list.csv</a> — stock-to-part operation list</li>
+        <li><a href="../supplier-rfq.md">supplier-rfq.md</a> — Q2 2026 batch RFQ</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Assembly &amp; validation</h4>
+      <ul class="tight">
+        <li><a href="../assembly-manual.md">assembly-manual.md</a> — phases 0 through 7</li>
+        <li><a href="../validation.csv">validation.csv</a> — predicted vs measured per variant</li>
+        <li><a href="../drawing-brief.md">drawing-brief.md</a> — 9-sheet drawing set spec</li>
+        <li><a href="../drawings/00-hero-v1-standard.svg">drawings/00-hero-v1-standard.svg</a> — section drawing placeholder</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Visual &amp; site</h4>
+      <ul class="tight">
+        <li><a href="../visual-bom-brief.md">visual-bom-brief.md</a> — BOM photography brief</li>
+        <li><a href="../photo-shotlist.md">photo-shotlist.md</a> — 30+ shot list across phases</li>
+        <li><a href="../concepts/round-body-variants_concept-sheet.png">concepts/round-body-variants_concept-sheet.png</a> — original concept sheet</li>
+        <li><a href="../cad/README.md">cad/</a> &amp; <a href="../cnc/README.md">cnc/</a> — toolpath plans</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Build status</h2>
+  <div class="status-row">
+    <span class="pill hot">★ Design v1 — formulas parametric</span>
+    <span class="pill">⏳ Phase 1 prototype not yet started</span>
+    <span class="pill">⏳ Drawings auto-generated, awaiting CAD calibration</span>
+    <span class="pill">⏳ Wolfram notebook starter scaffolded</span>
+  </div>
+  <p>The first physical prototype's measurements will retire the highest-risk unknowns:</p>
+  <ol class="tight">
+    <li>Curved-cantilever multiplier for our specific dome rise (V2/V4 only).</li>
+    <li>Helmholtz end-correction term for slit ports (all variants).</li>
+    <li>Padauk K-constant for our specific stock vs the library value (24,438).</li>
+    <li>Bowl-top rabbet joint long-term durability under seasonal cycling.</li>
+    <li>Player ergonomics on Floor Pouf 20″ (new size class for Tony's catalog).</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Sister repos &amp; catalog</h2>
+  <ul class="tight">
+    <li><a href="https://github.com/tonykoop/tongue-drum">tongue-drum</a> — rectangular-prism precursor</li>
+    <li><a href="https://github.com/tonykoop/steel-tongue-drum">steel-tongue-drum</a> — steel cantilever cousin</li>
+    <li><a href="https://github.com/tonykoop/ceramic-tongue-drum">ceramic-tongue-drum</a> — slip-cast cousin</li>
+    <li><a href="https://github.com/tonykoop/ashiko-drum-workshop">ashiko-drum-workshop</a> — segmented bowl reference</li>
+    <li><a href="https://github.com/tonykoop/conga">conga</a> — stave &amp; segmented shell reference</li>
+    <li><a href="https://github.com/tonykoop/instrument-maker">instrument-maker</a> — orchestrating skill and Master Catalog</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <p>Heifer Zephyr Instruments &middot; Tony Koop &middot; Wood Shell Tongue Drum &middot; CC BY 4.0</p>
+  <p>This site is generated alongside the build packet at <a href="https://github.com/tonykoop/wood-shell-tongue-drum">github.com/tonykoop/wood-shell-tongue-drum</a>.</p>
+</footer>
+
+</body>
+</html>

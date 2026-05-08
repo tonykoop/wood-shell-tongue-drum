@@ -1,0 +1,39 @@
+size,variant,target,parameter,predicted_value,measured_value,unit,cents_error,measurement_date,instrument,notes
+Standard 16in,V1,ding fundamental,frequency,220.00,,Hz,,,Korg OT-120,"A3 ding (MIDI 57). Tunable band A3 +/- 30 cents. Recommended first prototype."
+Standard 16in,V1,tongue 1 (E4),frequency,329.63,,Hz,,,Korg OT-120,"E4 tongue. Cut 0.030 in long; file to pitch."
+Standard 16in,V1,tongue 2 (F4),frequency,349.23,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 3 (G4),frequency,392.00,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 4 (A4),frequency,440.00,,Hz,,,Korg OT-120,"Reference pitch — should land dead-on without filing"
+Standard 16in,V1,tongue 5 (B4),frequency,493.88,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 6 (C5),frequency,523.25,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 7 (D5),frequency,587.33,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 8 (E5),frequency,659.26,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 9 (G5),frequency,783.99,,Hz,,,Korg OT-120,
+Standard 16in,V1,tongue 10 (A5),frequency,880.00,,Hz,,,Korg OT-120,
+Standard 16in,V1,Helmholtz cavity,frequency,194.57,,Hz,,,microphone + spectrum,"Cavity port puff test. Target 0.88 x ding. If measures > 230 Hz, port too large; < 175 Hz, port too small."
+Standard 16in,V1,coupling ratio,f_H/f_ding,0.88,,ratio,,,computed,"Acceptance band 0.80-1.20 for coupled regime"
+Standard 16in,V1,sustain T60,RT decay -60dB,2.5,,seconds,,,REW software,"Acceptance 1.5-4.0 s. Wood tongue drums typically more sustained than rectangular due to Helmholtz."
+Standard 16in,V1,bearing-edge planarity,TIR,0.005,,inches,,,dial indicator,"Lathe-tested. Acceptance +/- 0.005 in."
+Standard 16in,V1,wall thickness uniformity,8 points around shell,0.625,,inches,,,calipers,"+/- 0.030 in acceptance. Wedge-shaped wall = asymmetric cavity = killed bass."
+Standard 16in,V1,soundboard thickness uniformity,9-pt grid,0.375,,inches,,,calipers,"+/- 0.005 in acceptance. Affects tongue pitch via sqrt(t)."
+Standard 16in,V1,slit kerf width,5-point sample,0.125,,inches,,,feeler gauge,"+/- 0.005 in. Wider kerfs = lower Q."
+Standard 16in,V1,gu-port concentricity,distance from bowl center,0,,inches,,,calipers,"+/- 0.025 in. Off-center port shifts effective neck length."
+Standard 16in,V1,bowl-top airtight seal,pressurization test,pass,,pass/fail,,,vacuum test or smoke,"No air leakage at the rabbet joint. Critical for Helmholtz Q."
+Standard 16in,V1,glue-line shear (24h cure),destructive sample test,4000,,psi,,,test fixture,"Titebond III rated 4000 psi. Test on a sacrificial sample stave joint, not the drum itself."
+Travel 12in,V1,ding fundamental,frequency,293.66,,Hz,,,Korg OT-120,"D4 ding (MIDI 62). Build last after Standard is dialed in."
+Travel 12in,V1,Helmholtz cavity,frequency,321.53,,Hz,,,microphone + spectrum,"Predicted ratio 1.09 — at upper edge of coupled band. May need to shrink port to 1.75 in to lift below ding."
+Travel 12in,V1,coupling ratio,f_H/f_ding,1.09,,ratio,,,computed,"Tight; acceptance 0.80-1.20. Watch the Helmholtz tuning carefully."
+Floor Pouf 20in,V1,ding fundamental,frequency,146.83,,Hz,,,Korg OT-120,"D3 ding. WARNING: ding tongue length (9.12 in) exceeds 9 in cap by 0.12 in. Use Cedar (8.34 in fits) or raise ding to D#3."
+Floor Pouf 20in,V1,Helmholtz cavity,frequency,144.69,,Hz,,,microphone + spectrum,"Predicted ratio 0.99 — perfectly coupled."
+Floor Pouf 20in,V1,coupling ratio,f_H/f_ding,0.99,,ratio,,,computed,"Sweet spot."
+Standard 16in,V2,ding fundamental,frequency,220.00,,Hz,,,Korg OT-120,"A3 ding. Domed top requires +2.5% tongue length correction."
+Standard 16in,V2,curved-cantilever correction,measured/predicted ratio,1.025,,multiplier,,,Korg OT-120,"VALIDATE EMPIRICALLY: tap one tongue at L = sqrt(K*t/f)*1.025, measure pitch, back-solve actual factor before cutting all 11."
+Standard 16in,V2,Helmholtz cavity,frequency,133.48,,Hz,,,microphone + spectrum,"Predicted ratio 0.61 — UNDER-COUPLED. Likely need to shrink port from 2.5 in to ~1.5 in to lift f_H to coupled regime."
+Standard 16in,V3,ding fundamental,frequency,220.00,,Hz,,,Korg OT-120,"A3 ding, hemisphere bowl, flat top."
+Standard 16in,V3,Helmholtz cavity,frequency,238.30,,Hz,,,microphone + spectrum,"Predicted ratio 1.08 — coupled. Hemisphere has smaller volume than cylinder so f_H higher."
+Standard 16in,V3,coupling ratio,f_H/f_ding,1.08,,ratio,,,computed,"Coupled."
+Standard 16in,V4,ding fundamental,frequency,220.00,,Hz,,,Korg OT-120,
+Standard 16in,V4,Helmholtz cavity,frequency,161.12,,Hz,,,microphone + spectrum,"Predicted ratio 0.73 — UNDER-COUPLED. Combine V2 + V3 effects."
+All,All,A4 = 440 Hz sanity,reference pitch,440.00,,Hz,,,Korg OT-120,"Sanity check: tongue 4 (A4) is reference pitch — should land dead-on. If off > 5 cents, K-constant of stock differs from library."
+All,All,Padauk K calibration,measured K constant,24438,,K imperial,,,back-computed from tongue measurement,"After tuning, back-compute K = f * L^2 / t. Update library if measured value differs > 5% from 24438."
+All,V2+V4,curved cantilever K-effective,measured/predicted ratio,1.025,,multiplier,,,first dome prototype,"Per-family corrections database entry. Will propagate to V2/V4 sibling packets."

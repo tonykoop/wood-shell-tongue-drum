@@ -1,0 +1,27 @@
+part_id,supplier,supplier_url,sku_or_search,lead_time_days,moq,verified_price_date,price_volatility,required_spec,search_terms,notes
+SHELL-STAVE-WALNUT-S,Bell Forest Products,bellforestproducts.com,"black walnut 4/4 S2S FAS",5,1 BdFt,2026-05-07,low,"4/4 S2S FAS black walnut, edge-jointable","black walnut 4/4 turning blanks","Recommended supplier for shell stock"
+SHELL-STAVE-WALNUT-T,Bell Forest Products,bellforestproducts.com,"black walnut 4/4 S2S FAS",5,1 BdFt,2026-05-07,low,"4/4 S2S FAS black walnut","black walnut 4/4",
+SHELL-STAVE-WALNUT-F,Bell Forest Products,bellforestproducts.com,"black walnut 4/4 S2S FAS",5,1 BdFt,2026-05-07,low,"4/4 S2S FAS black walnut","black walnut 4/4",
+SHELL-SEG-WALNUT-S,Cook Woods,cookwoods.com,"black walnut 4/4 turning blanks",4,1,2026-05-07,low,"Bulk segment-grade walnut blanks","walnut turning blanks 4/4","Alt source for segmented body"
+BOWL-SEG-WALNUT-S,Cook Woods,cookwoods.com,"black walnut 4/4 turning blanks",4,1,2026-05-07,low,"Graduated-diameter ring blanks","walnut turning blanks 4/4",
+BOWL-BLANK-WALNUT-S,Cook Woods,cookwoods.com,"black walnut 8/4 thick stock",10,1,2026-05-07,medium,"5x 1in plies for CNC bowl glue-up","walnut 8/4 thick","CNC bowl alt path; verify thickness availability"
+SOUNDBOARD-PADAUK-S,Bell Forest Products,bellforestproducts.com,"padauk 3/8 figured S4S",5,1 BdFt,2026-05-07,medium,"Padauk 3/8 in thickness, FAS, edge-quartersawn preferred","padauk 4/4 S4S","Critical: thickness controls tongue length. Verify 3/8 in. Quartersawn improves bend stability."
+SOUNDBOARD-PADAUK-T,Bell Forest Products,bellforestproducts.com,"padauk 1/4 S4S",5,1 BdFt,2026-05-07,medium,"Padauk 1/4 in thickness, FAS","padauk thin stock",
+SOUNDBOARD-PADAUK-F,Bell Forest Products,bellforestproducts.com,"padauk 1/2 S4S",5,1 BdFt,2026-05-07,medium,"Padauk 1/2 in thickness, FAS","padauk 1/2 in",
+SOUNDBOARD-CEDAR-F-ALT,Old Growth Music,oldgrowthmusic.com,"western red cedar soundboard 1/2 quartersawn",7,1,2026-05-07,medium,"WRC 1/2 in quartersawn, A grade","western red cedar soundboard 1/2","Alt for D3 ding fit on Floor Pouf"
+DOMEBLANK-PADAUK-S,Bell Forest Products,bellforestproducts.com,"padauk 4/4 boards (3 boards required)",5,1 BdFt,2026-05-07,medium,"3x 1/2in boards, edge-jointable","padauk 4/4 S4S","Glue 3 plies to make dome blank thicker than 1.5 in"
+DOMEBLANK-POPLAR-S,Lowe's,lowes.com,"poplar 1x12 board (3 boards)",1,1,2026-05-07,low,"3x poplar boards 1x12x18in","poplar 1x12","Cheap test stock for dome surfacing rehearsal"
+GUE-TITEBOND3,Rockler,rockler.com,"Titebond III 16oz",2,1,2026-05-07,low,"PVA wood glue, waterproof, 4000 psi shear","Titebond III",
+RABBET-BIT-RBR,Rockler,rockler.com,"rabbeting router bit set with bearing kit",2,1,2026-05-07,low,"1/4 in shank, multi-bearing rabbet kit","rabbeting bit set",
+SLIT-BIT-UPCUT-1-8,Amana Tool,amanatool.com,"46202 1/8in upcut spiral",3,1,2026-05-07,low,"Solid carbide, 1/8 in, 1/4 in shank, upcut spiral","Amana 46202 1/8 upcut",
+BALLEND-3-4,Amana Tool,amanatool.com,"46377 3/4 ball nose",3,1,2026-05-07,low,"3/4 in ball nose, 1/2 in shank, solid carbide","Amana 46377 3/4 ball nose",
+GU-STEPBIT-3,Amazon,amazon.com,"Irwin Unibit step drill 1/4 to 3 in",2,1,2026-05-07,low,"Step bit covering 0.25 to 3 in in 1/4 in increments","step drill bit 1/4 to 3 in",
+ORING-RUBBER-25,McMaster-Carr,mcmaster.com,"9452K42 Buna-N O-ring 2-1/2 ID 1/8 thick",2,1,2026-05-07,low,"Buna-N O-ring 2.5 ID, 1/8 cross","O-ring 2.5 in ID 1/8",
+ORING-RUBBER-20,McMaster-Carr,mcmaster.com,"9452K38 Buna-N O-ring 2 ID 1/8 thick",2,1,2026-05-07,low,"Buna-N O-ring 2 ID, 1/8 cross","O-ring 2 in ID 1/8",
+ORING-RUBBER-30,McMaster-Carr,mcmaster.com,"9452K46 Buna-N O-ring 3 ID 1/8 thick",2,1,2026-05-07,low,"Buna-N O-ring 3 ID, 1/8 cross","O-ring 3 in ID 1/8",
+HANDLE-ROPE-S,Knot and Rope Supply,knotandrope.com,"hemp rope 1/2 in 25 ft hank",3,1,2026-05-07,low,"Natural hemp rope, 1/2 in dia","hemp rope 1/2 in",
+FELT-FOOT-PADS,Hardware store,local,"felt floor-protection pads",1,1,2026-05-07,low,"Adhesive 1 in felt circles","felt furniture pads 1 in",
+FINISH-DANISH-OIL,Rockler,rockler.com,"Watco Danish Oil natural quart",2,1,2026-05-07,low,"Penetrating oil finish, natural color","Watco Danish Oil natural quart",
+FINISH-WAX-CARNAUBA,Rockler,rockler.com,"Renaissance Wax 65ml",2,1,2026-05-07,low,"Microcrystalline wax for final finish","Renaissance Wax",
+SANDPAPER-SET,Hardware store,local,"sandpaper assortment 80-600 grit",1,1,2026-05-07,low,"Mixed grits 80/120/220/320/400/600","sandpaper assortment",
+MALLET-SET,Hapi Drum,hapidrum.com,"silicone tongue drum mallet pair",5,1,2026-05-07,low,"Soft rubber/silicone heads, 8 in shaft","tongue drum mallets pair",
