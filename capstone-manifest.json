@@ -1,7 +1,7 @@
 {
-  "packet_dir": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum",
+  "packet_dir": ".",
   "title": "Wood Shell Tongue Drum Capstone",
-  "generated": "2026-05-07",
+  "generated": "2026-05-08",
   "files_included": [
     "design.md",
     "bom.csv",
@@ -15,14 +15,15 @@
     "wolfram-starter.wl",
     "README.md",
     "photo-shotlist.md",
-    "risks.md"
+    "risks.md",
+    "validation-report.md"
   ],
   "outputs": {
-    "capstone_deck_markdown": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum/capstone-deck.md",
-    "capstone_deck_pptx": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum/capstone-deck.pptx",
-    "print_packet_markdown": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum/print-packet.md",
-    "print_packet_html": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum/print-packet.html",
-    "print_packet_pdf": "/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum/print-packet.pdf"
+    "capstone_deck_markdown": "capstone-deck.md",
+    "capstone_deck_pptx": null,
+    "print_packet_markdown": "print-packet.md",
+    "print_packet_html": "print-packet.html",
+    "print_packet_pdf": "print-packet.pdf"
   },
   "notes": [
     "PPTX is created when python-pptx is installed.",

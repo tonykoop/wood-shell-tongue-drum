@@ -96,9 +96,9 @@ The **Helmholtz target** is `f_H ≤ f_ding` — the cavity should resonate at o
 
 - `f_H / f_ding < 0.8` — free bass extension; cavity reinforces below the ding (good for floor pouf).
 - `0.8 ≤ f_H / f_ding ≤ 1.2` — coupled regime; cavity and ding share modal energy (the design target).
-- `f_H / f_ding > 1.2` — cavity sits above the ding; cavity will fight the ding rather than support it. **Mistuned** — fix by enlarging the gu port (raises `f_H`) or shrinking it (lowers `f_H`).
+- `f_H / f_ding > 1.2` — cavity sits above the ding; cavity will fight the ding rather than support it. **Mistuned high** — lower `f_H` by reducing effective port area, adding a removable restrictor/liner, lengthening the neck, or increasing the chamber volume.
 
-The **gu port diameter** is the primary tuning knob. It is drilled last, deliberately undersized, and opened up incrementally with a step bit while measuring `f_H` (gentle puff at the port, microphone above). This is the same field-tuning method used on Hapi-style steel tongue drums.
+The **gu port diameter** is the primary tuning knob. Because `f_H ∝ sqrt(A_port)`, opening the port raises the Helmholtz frequency; reducing effective area or increasing neck length lowers it. The port is drilled last, deliberately undersized, and opened up incrementally with a step bit while measuring `f_H` (gentle puff at the port, microphone above). This is the same field-tuning method used on Hapi-style steel tongue drums.
 
 ### 2.4 Computed Helmholtz / ding ratios (current presets)
 
@@ -111,7 +111,17 @@ Each cell below is `f_H` (Hz) computed from the formulas above with the current 
 | V3      | 359.5 Hz · ratio 1.22 (over)      | **238.3 Hz · ratio 1.08**          | 177.2 Hz · ratio 1.21 (over, edge)  |
 | V4      | 244.2 Hz · ratio 0.83             | 161.1 Hz · ratio 0.73              | 119.5 Hz · ratio 0.81               |
 
-Reading the matrix: **V1 Standard 16″ and V1 Floor Pouf 20″ are in the sweet spot**; V3 Standard 16″ is also coupled. V2 cells are systematically under-coupled because the dome adds neck length without proportional volume — they will need a *smaller* gu port than the preset 2.5″ to lift `f_H`. V1 Travel 12″ is right at the upper edge of the coupled band.
+Reading the matrix: **V1 Standard 16″ and V1 Floor Pouf 20″ are in the sweet spot**; V3 Standard 16″ is also coupled. V2 cells are systematically under-coupled because the dome adds neck length without proportional volume — they will need a *larger* effective gu port than the preset 2.5″, a shorter effective neck, or a revised dome cavity model to lift `f_H`. V1 Travel 12″ is right at the upper edge of the coupled band.
+
+### 2.4.1 Gu-port tuning direction
+
+| Condition | Field symptom | Corrective direction | First shop action |
+|-----------|---------------|----------------------|-------------------|
+| `f_H/f_ding < 0.80` | Cavity too low / under-coupled | Raise `f_H` | Enlarge gu port in 0.25″ steps; if already at structural max, reduce neck length or revise chamber volume |
+| `0.80 ≤ f_H/f_ding ≤ 1.20` | Coupled | Hold | Stop drilling; record final port diameter and environment |
+| `f_H/f_ding > 1.20` | Cavity too high | Lower `f_H` | Install removable restrictor/liner, lengthen neck with a port sleeve, or increase chamber volume on the next build |
+
+For the Standard 16″ V2 preset, the 2.5″ port predicts 133.5 Hz (`0.61 × ding`). A first-order diameter solve puts the lower coupled edge near 3.3″ and the `0.95 × ding` target near 3.9″, so the V2/V4 validation build should treat the port as a measured design variable, not a fixed decorative hole.
 
 These values are **derived estimates**, not measured. They will shift once the first prototype is tuned and the per-family corrections database is populated.
 

@@ -29,7 +29,7 @@ Four geometric variants × three size envelopes = twelve cells. Each cell carrie
 
 **Sizes:** Travel 12″ Ø · Standard 16″ Ø (Moroccan-ottoman scale) · Floor Pouf 20″ Ø.
 
-The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Three cells sit cleanly in the coupled regime (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a smaller-than-preset gu port to reach coupling; V1 Travel sits right at the upper edge of the band.
+The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Three cells sit cleanly in the coupled regime (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a larger-than-preset gu port or a lower cavity/neck correction to reach coupling; V1 Travel sits right at the upper edge of the band.
 
 ## Recommended first prototype
 
@@ -62,7 +62,8 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`risks.md`](risks.md)                         | Red-team pass with verification tests attached            |
 | [`wolfram-starter.wl`](wolfram-starter.wl)     | 3-DOF coupled-oscillator notebook starter                 |
 | [`capstone-deck.md`](capstone-deck.md) / [`print-packet.md`](print-packet.md) | Recruiter-facing deck + shop-floor printable packet       |
-| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans (G-code/SolidWorks files staged)          |
+| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging |
+| [`cnc/jig-and-template-plan.md`](cnc/jig-and-template-plan.md) | Fixture choice matrix for the first prototype and later variants |
 | [`site/index.html`](site/index.html)           | Build-log static site                                     |
 | [`concepts/`](concepts/)                       | Original concept sheet (ideation, not manufacturable)     |
 
@@ -73,12 +74,14 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ Assembly manual, supplier RFQ, drawing brief, visual BOM brief, photo shot list
 - ✅ Risks register (16 entries across acoustic, structural, ergonomic, supply, fit/finish)
 - ✅ Wolfram notebook starter (3-DOF coupled oscillator)
+- ✅ CNC/laser/jig decision plan for public review
 - ✅ Build-log site (`site/index.html`)
 - ✅ Hero side-section drawing (`drawings/00-hero-v1-standard.svg`)
 - ⏳ Phase 1 prototype: V1 Cylinder · Flat at 16″ Standard
 - ⏳ SolidWorks CAD assembly (deferred until first-prototype calibration)
 - ⏳ Auto-generated SVG sheets 01–09 from `scripts/generate_drawings.py`
-- ⏳ Capstone .pptx and print-packet .pdf (Markdown sources ship; binary outputs build from them)
+- ✅ Capstone markdown and print-packet PDF generated from the repo sources
+- ⏳ Capstone .pptx refresh (requires python-pptx in the local generator environment)
 
 ## Highest-risk unknowns
 

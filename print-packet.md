@@ -1,7 +1,7 @@
 # Wood Shell Tongue Drum Capstone Print Packet
 
-Generated: 2026-05-07
-Packet folder: `/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue-drum`
+Generated: 2026-05-08
+Packet folder: `wood-shell-tongue-drum`
 
 ## File Map
 
@@ -20,6 +20,7 @@ Packet folder: `/sessions/practical-ecstatic-edison/mnt/GitHub/wood-shell-tongue
 | `README.md` | Project artifact. |
 | `photo-shotlist.md` | Project artifact. |
 | `risks.md` | Project artifact. |
+| `validation-report.md` | Project artifact. |
 
 <div class="page-break"></div>
 
@@ -125,9 +126,9 @@ The **Helmholtz target** is `f_H ≤ f_ding` — the cavity should resonate at o
 
 - `f_H / f_ding < 0.8` — free bass extension; cavity reinforces below the ding (good for floor pouf).
 - `0.8 ≤ f_H / f_ding ≤ 1.2` — coupled regime; cavity and ding share modal energy (the design target).
-- `f_H / f_ding > 1.2` — cavity sits above the ding; cavity will fight the ding rather than support it. **Mistuned** — fix by enlarging the gu port (raises `f_H`) or shrinking it (lowers `f_H`).
+- `f_H / f_ding > 1.2` — cavity sits above the ding; cavity will fight the ding rather than support it. **Mistuned high** — lower `f_H` by reducing effective port area, adding a removable restrictor/liner, lengthening the neck, or increasing the chamber volume.
 
-The **gu port diameter** is the primary tuning knob. It is drilled last, deliberately undersized, and opened up incrementally with a step bit while measuring `f_H` (gentle puff at the port, microphone above). This is the same field-tuning method used on Hapi-style steel tongue drums.
+The **gu port diameter** is the primary tuning knob. Because `f_H ∝ sqrt(A_port)`, opening the port raises the Helmholtz frequency; reducing effective area or increasing neck length lowers it. The port is drilled last, deliberately undersized, and opened up incrementally with a step bit while measuring `f_H` (gentle puff at the port, microphone above). This is the same field-tuning method used on Hapi-style steel tongue drums.
 
 ### 2.4 Computed Helmholtz / ding ratios (current presets)
 
@@ -140,7 +141,17 @@ Each cell below is `f_H` (Hz) computed from the formulas above with the current 
 | V3      | 359.5 Hz · ratio 1.22 (over)      | **238.3 Hz · ratio 1.08**          | 177.2 Hz · ratio 1.21 (over, edge)  |
 | V4      | 244.2 Hz · ratio 0.83             | 161.1 Hz · ratio 0.73              | 119.5 Hz · ratio 0.81               |
 
-Reading the matrix: **V1 Standard 16″ and V1 Floor Pouf 20″ are in the sweet spot**; V3 Standard 16″ is also coupled. V2 cells are systematically under-coupled because the dome adds neck length without proportional volume — they will need a *smaller* gu port than the preset 2.5″ to lift `f_H`. V1 Travel 12″ is right at the upper edge of the coupled band.
+Reading the matrix: **V1 Standard 16″ and V1 Floor Pouf 20″ are in the sweet spot**; V3 Standard 16″ is also coupled. V2 cells are systematically under-coupled because the dome adds neck length without proportional volume — they will need a *larger* effective gu port than the preset 2.5″, a shorter effective neck, or a revised dome cavity model to lift `f_H`. V1 Travel 12″ is right at the upper edge of the coupled band.
+
+### 2.4.1 Gu-port tuning direction
+
+| Condition | Field symptom | Corrective direction | First shop action |
+|-----------|---------------|----------------------|-------------------|
+| `f_H/f_ding < 0.80` | Cavity too low / under-coupled | Raise `f_H` | Enlarge gu port in 0.25″ steps; if already at structural max, reduce neck length or revise chamber volume |
+| `0.80 ≤ f_H/f_ding ≤ 1.20` | Coupled | Hold | Stop drilling; record final port diameter and environment |
+| `f_H/f_ding > 1.20` | Cavity too high | Lower `f_H` | Install removable restrictor/liner, lengthen neck with a port sleeve, or increase chamber volume on the next build |
+
+For the Standard 16″ V2 preset, the 2.5″ port predicts 133.5 Hz (`0.61 × ding`). A first-order diameter solve puts the lower coupled edge near 3.3″ and the `0.95 × ding` target near 3.9″, so the V2/V4 validation build should treat the port as a measured design variable, not a fixed decorative hole.
 
 These values are **derived estimates**, not measured. They will shift once the first prototype is tuned and the per-family corrections database is populated.
 
@@ -630,13 +641,13 @@ If both rabbet and lap-step leak, install a 1/16″ cork ring in the rabbet unde
 
 ## Phase 4 — Gu-port tuning
 
-The gu port is your primary Helmholtz tuning knob. It is drilled **last** and **deliberately undersized**, then opened up incrementally while measuring `f_H`.
+The gu port is your primary Helmholtz tuning knob. It is drilled **last** and **deliberately undersized**, then opened up incrementally while measuring `f_H`. Opening the port raises `f_H`; adding a restrictor/liner or lengthening the port neck lowers `f_H`.
 
 1. Drill a ¼″ pilot hole through the shell/bowl bottom, centered (verify ± 0.025″).
 2. Place a small microphone above the port. Puff gently across the port edge (like blowing across a bottle top). Record the resonance frequency in REW or Spectroid.
 3. Use a step-drill to enlarge the port in ¼″ increments. Re-measure `f_H` at each step. Stop when `f_H ≈ 0.88 × f_ding` (Standard 16″ V1: target ≈ 195 Hz).
-4. **If the cavity is over-coupled** (ratio > 1.2 at any port size including 0.25″): the cavity is leaking elsewhere — re-test for rim seal before enlarging further.
-5. **If the cavity is under-coupled** (ratio < 0.8 even at the maximum port preset): the cavity volume is too large — this is a design problem, not a tuning problem. Document and re-evaluate.
+4. **If the cavity is high** (ratio > 1.2 before the port reaches the target diameter): stop drilling. Lower `f_H` with a removable restrictor, port sleeve, longer effective neck, or revised chamber volume on the next build.
+5. **If the cavity is low** (ratio < 0.8 even at the maximum safe port diameter): the chamber/neck model is under-predicting the port area required. Document the measured curve, do not keep enlarging into the rim margin, and re-evaluate the V2/V4 cavity model.
 
 Optional: install a Buna-N O-ring in the finished port (BOM rows ORING-RUBBER-*) for a Hapi-style cleaner tone. Not required.
 
@@ -696,7 +707,7 @@ Record measured values in `validation.csv`. If A4 measures off > 5 cents, back-c
 | 1     | 1A — cylinder   | 1A — cylinder   | 1B — bowl        | 1B — bowl        |
 | 2     | 2A — flat       | 2B — dome       | 2A — flat        | 2B — dome        |
 | 3     | 3.1 rabbet      | 3.1 rabbet      | 3.1 rabbet       | 3.1 rabbet       |
-| 4     | 2.5″ port       | < 1.5″ port (under-coup correction) | 2.5″ port | < 1.5″ port (under-coup correction) |
+| 4     | 2.5″ port       | larger measured port or sleeve experiment | 2.5″ port | larger measured port or sleeve experiment |
 | 5     | flat tuning     | flat + dome correction | flat tuning | flat + dome correction |
 | 6     | full validation | full validation + dome multiplier check | full validation | full validation + dome multiplier check |
 | 7     | standard finish | standard finish | standard finish  | standard finish  |
@@ -731,14 +742,14 @@ Target/measured values, tolerance, environment, result, and tuning/build action 
 | Standard 16in | V1 | bowl-top airtight seal | pressurization test | pass |  | pass/fail |  |  | vacuum test or smoke | No air leakage at the rabbet joint. Critical for Helmholtz Q. |
 | Standard 16in | V1 | glue-line shear (24h cure) | destructive sample test | 4000 |  | psi |  |  | test fixture | Titebond III rated 4000 psi. Test on a sacrificial sample stave joint, not the drum itself. |
 | Travel 12in | V1 | ding fundamental | frequency | 293.66 |  | Hz |  |  | Korg OT-120 | D4 ding (MIDI 62). Build last after Standard is dialed in. |
-| Travel 12in | V1 | Helmholtz cavity | frequency | 321.53 |  | Hz |  |  | microphone + spectrum | Predicted ratio 1.09 — at upper edge of coupled band. May need to shrink port to 1.75 in to lift below ding. |
+| Travel 12in | V1 | Helmholtz cavity | frequency | 321.53 |  | Hz |  |  | microphone + spectrum | Predicted ratio 1.09 — at upper edge of coupled band. If measurement rises above 1.20 x ding, lower f_H with a restrictor/liner or smaller effective port on the next template. |
 | Travel 12in | V1 | coupling ratio | f_H/f_ding | 1.09 |  | ratio |  |  | computed | Tight; acceptance 0.80-1.20. Watch the Helmholtz tuning carefully. |
 | Floor Pouf 20in | V1 | ding fundamental | frequency | 146.83 |  | Hz |  |  | Korg OT-120 | D3 ding. WARNING: ding tongue length (9.12 in) exceeds 9 in cap by 0.12 in. Use Cedar (8.34 in fits) or raise ding to D#3. |
 | Floor Pouf 20in | V1 | Helmholtz cavity | frequency | 144.69 |  | Hz |  |  | microphone + spectrum | Predicted ratio 0.99 — perfectly coupled. |
 | Floor Pouf 20in | V1 | coupling ratio | f_H/f_ding | 0.99 |  | ratio |  |  | computed | Sweet spot. |
 | Standard 16in | V2 | ding fundamental | frequency | 220.00 |  | Hz |  |  | Korg OT-120 | A3 ding. Domed top requires +2.5% tongue length correction. |
 | Standard 16in | V2 | curved-cantilever correction | measured/predicted ratio | 1.025 |  | multiplier |  |  | Korg OT-120 | VALIDATE EMPIRICALLY: tap one tongue at L = sqrt(K*t/f)*1.025, measure pitch, back-solve actual factor before cutting all 11. |
-| Standard 16in | V2 | Helmholtz cavity | frequency | 133.48 |  | Hz |  |  | microphone + spectrum | Predicted ratio 0.61 — UNDER-COUPLED. Likely need to shrink port from 2.5 in to ~1.5 in to lift f_H to coupled regime. |
+| Standard 16in | V2 | Helmholtz cavity | frequency | 133.48 |  | Hz |  |  | microphone + spectrum | Predicted ratio 0.61 — UNDER-COUPLED. Larger port area raises f_H; estimated lower coupled edge is near 3.3 in, with 0.95 x ding near 3.9 in. Validate before committing Padauk. |
 | Standard 16in | V3 | ding fundamental | frequency | 220.00 |  | Hz |  |  | Korg OT-120 | A3 ding, hemisphere bowl, flat top. |
 | Standard 16in | V3 | Helmholtz cavity | frequency | 238.30 |  | Hz |  |  | microphone + spectrum | Predicted ratio 1.08 — coupled. Hemisphere has smaller volume than cylinder so f_H higher. |
 | Standard 16in | V3 | coupling ratio | f_H/f_ding | 1.08 |  | ratio |  |  | computed | Coupled. |
@@ -1185,7 +1196,7 @@ Four geometric variants × three size envelopes = twelve cells. Each cell carrie
 
 **Sizes:** Travel 12″ Ø · Standard 16″ Ø (Moroccan-ottoman scale) · Floor Pouf 20″ Ø.
 
-The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Three cells sit cleanly in the coupled regime (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a smaller-than-preset gu port to reach coupling; V1 Travel sits right at the upper edge of the band.
+The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Three cells sit cleanly in the coupled regime (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a larger-than-preset gu port or a lower cavity/neck correction to reach coupling; V1 Travel sits right at the upper edge of the band.
 
 ## Recommended first prototype
 
@@ -1218,7 +1229,8 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`risks.md`](risks.md)                         | Red-team pass with verification tests attached            |
 | [`wolfram-starter.wl`](wolfram-starter.wl)     | 3-DOF coupled-oscillator notebook starter                 |
 | [`capstone-deck.md`](capstone-deck.md) / [`print-packet.md`](print-packet.md) | Recruiter-facing deck + shop-floor printable packet       |
-| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans (G-code/SolidWorks files staged)          |
+| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging |
+| [`cnc/jig-and-template-plan.md`](cnc/jig-and-template-plan.md) | Fixture choice matrix for the first prototype and later variants |
 | [`site/index.html`](site/index.html)           | Build-log static site                                     |
 | [`concepts/`](concepts/)                       | Original concept sheet (ideation, not manufacturable)     |
 
@@ -1229,12 +1241,14 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ Assembly manual, supplier RFQ, drawing brief, visual BOM brief, photo shot list
 - ✅ Risks register (16 entries across acoustic, structural, ergonomic, supply, fit/finish)
 - ✅ Wolfram notebook starter (3-DOF coupled oscillator)
+- ✅ CNC/laser/jig decision plan for public review
 - ✅ Build-log site (`site/index.html`)
 - ✅ Hero side-section drawing (`drawings/00-hero-v1-standard.svg`)
 - ⏳ Phase 1 prototype: V1 Cylinder · Flat at 16″ Standard
 - ⏳ SolidWorks CAD assembly (deferred until first-prototype calibration)
 - ⏳ Auto-generated SVG sheets 01–09 from `scripts/generate_drawings.py`
-- ⏳ Capstone .pptx and print-packet .pdf (Markdown sources ship; binary outputs build from them)
+- ✅ Capstone markdown and print-packet PDF generated from the repo sources
+- ⏳ Capstone .pptx refresh (requires python-pptx in the local generator environment)
 
 ## Highest-risk unknowns
 
@@ -1388,7 +1402,7 @@ This is a *new* design — no commercial wood-shell tongue drums exist in the ro
 
 **Severity:** medium
 **Description:** V2 and V4 ratios on Standard 16″ are 0.61 and 0.73 respectively — under-coupled. The cavity's Helmholtz resonance sits well below the ding and won't reinforce it. The drum will sound fine but not gain the bass extension the design promises.
-**Mitigation:** the gu port preset (2.5″ on Standard) is intentionally generous so the in-shop step-drill protocol can land the right size. For V2/V4 builds, start the port at 1.0″ (not 2.5″) and step up only until the ratio enters the 0.80–1.20 band. The smaller port raises `f_H`. Document the final port size in the per-variant validation.csv row.
+**Mitigation:** the gu port preset (2.5″ on Standard) is a reviewable starting point, not a fixed feature. For V2/V4 builds, start with a pilot hole, step up in 0.25″ increments, and expect a larger effective port than V1 because larger port area raises `f_H`. The Standard 16″ V2 lower coupled edge is estimated near 3.3″; if that is structurally or aesthetically too large, switch to a port sleeve / neck-length experiment and record the revised model.
 **Verification test:** Helmholtz cavity row in `validation.csv` per variant; pass = `f_H/f_ding` ∈ [0.80, 1.20].
 
 ### A3 — Floor Pouf D3 ding tongue exceeds radial fit cap
@@ -1514,7 +1528,7 @@ This is a *new* design — no commercial wood-shell tongue drums exist in the ro
 | ID  | Category    | Severity | Variants affected | Mitigation in place | Verification gate            |
 |-----|-------------|----------|--------------------|---------------------|------------------------------|
 | A1  | Acoustic    | High     | V2, V4             | Yes (first-tongue calib) | first-tongue cal in validation.csv |
-| A2  | Acoustic    | Medium   | V2, V4             | Yes (smaller port)  | f_H/f_ding ratio band       |
+| A2  | Acoustic    | Medium   | V2, V4             | Yes (larger effective port or port-sleeve model) | f_H/f_ding ratio band       |
 | A3  | Acoustic    | High     | Floor Pouf only    | Yes (Cedar / D♯3)   | ding length vs cap           |
 | A4  | Acoustic    | Medium   | All                | Yes (rim TIR + smoke test) | bowl-top airtight seal       |
 | A5  | Acoustic    | Low      | All                | Yes (safety margin) | f_H deviation > 10 %         |
@@ -1539,3 +1553,45 @@ This is a *new* design — no commercial wood-shell tongue drums exist in the ro
 3. **Padauk K-constant for our specific stock.** The library value 24,438 is from textbook E and ρ; the actual stock may vary 2–5 %. A4 calibration on Phase 1 catches this.
 4. **Bowl-top joint long-term durability.** Rabbet + Titebond III is the working assumption; 12+ months of seasonal cycling will reveal whether the joint holds.
 5. **Player ergonomics on Floor Pouf.** A 20″-OD drum with the largest tongue at 9″+ length is a new size class for Tony's catalog. First-prototype reach photos will inform whether the radial layout needs revision.
+
+<div class="page-break"></div>
+
+## validation-report.md
+
+Project artifact.
+
+# Validation Report — Wood Shell Tongue Drum
+
+Generated during the v4 public-readiness pass on 2026-05-08.
+
+## Clean Checks
+
+| Gate | Result |
+|------|--------|
+| Required Mode A files present | Pass |
+| README is instrument-specific and includes hero drawing | Pass |
+| Parametric design source exists | Pass (`wood-shell-tongue-drum-design-table.xlsx`) |
+| BOM, sourcing, cut list, validation CSVs present | Pass |
+| Assembly, RFQ, visual BOM, photo shot list present | Pass |
+| Risk register exists with acoustic, structural, ergonomic, supply, and finish risks | Pass |
+| Build-log site exists | Pass (`site/index.html`) |
+| Print packet PDF exists | Pass |
+| Capstone markdown exists | Pass |
+
+## Fixed In This Pass
+
+| Finding | Files updated | Resolution |
+|---------|---------------|------------|
+| Gu-port tuning direction was reversed in several notes | `design.md`, `README.md`, `assembly-manual.md`, `risks.md`, `validation.csv`, `site/index.html` | Clarified that increasing port area raises Helmholtz frequency; under-coupled V2/V4 variants need a larger effective port or revised neck/cavity model |
+| CNC/laser/jig strategy was present but scattered | `cnc/README.md`, `cnc/jig-and-template-plan.md` | Added a single fixture/template decision matrix for public review |
+| README status undersold generated packet outputs | `README.md` | Marked capstone markdown and printable packet outputs as complete; noted that PPTX refresh needs python-pptx |
+
+## Escalated / Human-Owned
+
+| Gate | Remaining action |
+|------|------------------|
+| Physical tuning validation | Build V1 Standard 16 in prototype; fill `measured_value`, `cents_error`, and environment fields in `validation.csv` |
+| Supplier facts | Re-check current price, stock, shipping, and substitutes before buying |
+| Capstone PPTX refresh | Existing `capstone-deck.pptx` is retained, but the local generator did not refresh PPTX because python-pptx is unavailable in this environment |
+| CAD and G-code | Generate only after Phase 1 measurements calibrate Padauk K, rim seal behavior, and Helmholtz end correction |
+| Real photos/audio | Replace concept/SVG placeholders with shop process photos, final instrument photos, and tuning recordings after build |

@@ -19,7 +19,7 @@ This is a *new* design — no commercial wood-shell tongue drums exist in the ro
 
 **Severity:** medium
 **Description:** V2 and V4 ratios on Standard 16″ are 0.61 and 0.73 respectively — under-coupled. The cavity's Helmholtz resonance sits well below the ding and won't reinforce it. The drum will sound fine but not gain the bass extension the design promises.
-**Mitigation:** the gu port preset (2.5″ on Standard) is intentionally generous so the in-shop step-drill protocol can land the right size. For V2/V4 builds, start the port at 1.0″ (not 2.5″) and step up only until the ratio enters the 0.80–1.20 band. The smaller port raises `f_H`. Document the final port size in the per-variant validation.csv row.
+**Mitigation:** the gu port preset (2.5″ on Standard) is a reviewable starting point, not a fixed feature. For V2/V4 builds, start with a pilot hole, step up in 0.25″ increments, and expect a larger effective port than V1 because larger port area raises `f_H`. The Standard 16″ V2 lower coupled edge is estimated near 3.3″; if that is structurally or aesthetically too large, switch to a port sleeve / neck-length experiment and record the revised model.
 **Verification test:** Helmholtz cavity row in `validation.csv` per variant; pass = `f_H/f_ding` ∈ [0.80, 1.20].
 
 ### A3 — Floor Pouf D3 ding tongue exceeds radial fit cap
@@ -145,7 +145,7 @@ This is a *new* design — no commercial wood-shell tongue drums exist in the ro
 | ID  | Category    | Severity | Variants affected | Mitigation in place | Verification gate            |
 |-----|-------------|----------|--------------------|---------------------|------------------------------|
 | A1  | Acoustic    | High     | V2, V4             | Yes (first-tongue calib) | first-tongue cal in validation.csv |
-| A2  | Acoustic    | Medium   | V2, V4             | Yes (smaller port)  | f_H/f_ding ratio band       |
+| A2  | Acoustic    | Medium   | V2, V4             | Yes (larger effective port or port-sleeve model) | f_H/f_ding ratio band       |
 | A3  | Acoustic    | High     | Floor Pouf only    | Yes (Cedar / D♯3)   | ding length vs cap           |
 | A4  | Acoustic    | Medium   | All                | Yes (rim TIR + smoke test) | bowl-top airtight seal       |
 | A5  | Acoustic    | Low      | All                | Yes (safety margin) | f_H deviation > 10 %         |

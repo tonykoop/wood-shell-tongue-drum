@@ -115,13 +115,13 @@ If both rabbet and lap-step leak, install a 1/16″ cork ring in the rabbet unde
 
 ## Phase 4 — Gu-port tuning
 
-The gu port is your primary Helmholtz tuning knob. It is drilled **last** and **deliberately undersized**, then opened up incrementally while measuring `f_H`.
+The gu port is your primary Helmholtz tuning knob. It is drilled **last** and **deliberately undersized**, then opened up incrementally while measuring `f_H`. Opening the port raises `f_H`; adding a restrictor/liner or lengthening the port neck lowers `f_H`.
 
 1. Drill a ¼″ pilot hole through the shell/bowl bottom, centered (verify ± 0.025″).
 2. Place a small microphone above the port. Puff gently across the port edge (like blowing across a bottle top). Record the resonance frequency in REW or Spectroid.
 3. Use a step-drill to enlarge the port in ¼″ increments. Re-measure `f_H` at each step. Stop when `f_H ≈ 0.88 × f_ding` (Standard 16″ V1: target ≈ 195 Hz).
-4. **If the cavity is over-coupled** (ratio > 1.2 at any port size including 0.25″): the cavity is leaking elsewhere — re-test for rim seal before enlarging further.
-5. **If the cavity is under-coupled** (ratio < 0.8 even at the maximum port preset): the cavity volume is too large — this is a design problem, not a tuning problem. Document and re-evaluate.
+4. **If the cavity is high** (ratio > 1.2 before the port reaches the target diameter): stop drilling. Lower `f_H` with a removable restrictor, port sleeve, longer effective neck, or revised chamber volume on the next build.
+5. **If the cavity is low** (ratio < 0.8 even at the maximum safe port diameter): the chamber/neck model is under-predicting the port area required. Document the measured curve, do not keep enlarging into the rim margin, and re-evaluate the V2/V4 cavity model.
 
 Optional: install a Buna-N O-ring in the finished port (BOM rows ORING-RUBBER-*) for a Hapi-style cleaner tone. Not required.
 
@@ -181,7 +181,7 @@ Record measured values in `validation.csv`. If A4 measures off > 5 cents, back-c
 | 1     | 1A — cylinder   | 1A — cylinder   | 1B — bowl        | 1B — bowl        |
 | 2     | 2A — flat       | 2B — dome       | 2A — flat        | 2B — dome        |
 | 3     | 3.1 rabbet      | 3.1 rabbet      | 3.1 rabbet       | 3.1 rabbet       |
-| 4     | 2.5″ port       | < 1.5″ port (under-coup correction) | 2.5″ port | < 1.5″ port (under-coup correction) |
+| 4     | 2.5″ port       | larger measured port or sleeve experiment | 2.5″ port | larger measured port or sleeve experiment |
 | 5     | flat tuning     | flat + dome correction | flat tuning | flat + dome correction |
 | 6     | full validation | full validation + dome multiplier check | full validation | full validation + dome multiplier check |
 | 7     | standard finish | standard finish | standard finish  | standard finish  |

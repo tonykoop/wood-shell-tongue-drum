@@ -2,6 +2,8 @@
 
 This folder holds CNC toolpaths, post-processed G-code, fixture STLs, and tool-list files for the wood shell tongue drum family.
 
+For the public review pass, the most important CNC deliverable is the setup logic rather than premature G-code. The first prototype can be built from the workbook, cut list, and manual CAM setup, while later V2/V4 dome work waits for calibrated CAD. The fixture and template choices are tracked in [`jig-and-template-plan.md`](jig-and-template-plan.md).
+
 ## Critical CNC operations
 
 | Operation                     | Variants     | Tool                           | Stock                              | Stepover / DOC               |
@@ -19,6 +21,15 @@ All tools listed in `bom.csv` under tooling rows. Critical tools:
 
 - `SLIT-BIT-UPCUT-1-8` — Amana 46202 1/8″ solid carbide upcut spiral. Buy 3 (one breaks per shell).
 - `BALLEND-3-4` — Amana 46377 3/4″ ball nose, 1/2″ shank. One bit good for 3+ dome surfaces if kept clean.
+
+## Laser/template plan
+
+| Template | Tool | Material | Purpose | Public-review status |
+|----------|------|----------|---------|----------------------|
+| Soundboard tongue layout | Laser | 1/8″ MDF or chipboard | Physical overlay to verify tongue spacing before CNC routing | Required before first cut |
+| Vacuum gasket / tape map | Laser | 1/16″ rubber sheet or kraft template | Keeps hold-down clear of slit kerfs and tongue tips | Required before first cut |
+| Stave numbering labels | Laser or printer | Masking tape / paper | Keeps 16-stave grain order stable through glue-up | Nice-to-have |
+| Gu-port tuning card | Laser or printer | Cardstock | Measurement log by port diameter; taped to the bench during step drilling | Required for validation |
 
 ## Tongue-slit toolpath spec
 
@@ -73,7 +84,7 @@ cnc/
 
 ## Status
 
-**G-code files are placeholders at first commit.** They are emitted from the SolidWorks / Fusion CAD models once the first prototype's measurements have calibrated the workbook formulas. Hand-cutting the V1 Standard prototype (using the cut-list and a manual CNC plunge protocol) is the recommended fast-track to first measurements.
+**G-code files are intentionally deferred at first public review.** They are emitted from the SolidWorks / Fusion CAD models once the first prototype's measurements have calibrated the workbook formulas. Building the V1 Standard prototype from the cut list and manual CAM setup is the recommended fast-track to first measurements.
 
 ## Cross-references
 
