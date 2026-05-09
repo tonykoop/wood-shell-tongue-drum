@@ -54,13 +54,17 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 |------------------------------------------------|-----------------------------------------------------------|
 | [`design.md`](design.md)                       | Governing model, variant blocks, recommended prototype    |
 | [`wood-shell-tongue-drum-design-table.xlsx`](wood-shell-tongue-drum-design-table.xlsx) | Parametric workbook (190 formulas, 1 sheet)               |
+| [`family-spec.csv`](family-spec.csv)           | Twelve family rows spanning V1-V4 across Travel / Standard / Floor Pouf |
 | [`bom.csv`](bom.csv) / [`sourcing.csv`](sourcing.csv) / [`cut-list.csv`](cut-list.csv) / [`validation.csv`](validation.csv) | Manufacturing CSVs                                        |
 | [`assembly-manual.md`](assembly-manual.md)     | 7-phase build instructions                                |
 | [`supplier-rfq.md`](supplier-rfq.md)           | Q2 2026 batch supplier RFQ                                |
 | [`drawing-brief.md`](drawing-brief.md) / [`drawings/`](drawings/) | 9-sheet drawing spec + hero SVG                           |
 | [`visual-bom-brief.md`](visual-bom-brief.md) / [`photo-shotlist.md`](photo-shotlist.md) | Photography briefs                                        |
 | [`risks.md`](risks.md)                         | Red-team pass with verification tests attached            |
+| [`joinery-configuration-matrix.md`](joinery-configuration-matrix.md) | Practical shell and soundboard joinery comparison for issue `instrument-maker#118` |
+| [`resources.md`](resources.md) / [`jig-decision.md`](jig-decision.md) | Public-safe provenance, references, and fixture decisions |
 | [`wolfram-starter.wl`](wolfram-starter.wl)     | 3-DOF coupled-oscillator notebook starter                 |
+| [`wolfram/`](wolfram/) / [`jigs/`](jigs/) / [`data/`](data/) | Starter folders for notebook notes, fixture docs, and future measurements |
 | [`capstone-deck.md`](capstone-deck.md) / [`print-packet.md`](print-packet.md) | Recruiter-facing deck + shop-floor printable packet       |
 | [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging |
 | [`cnc/jig-and-template-plan.md`](cnc/jig-and-template-plan.md) | Fixture choice matrix for the first prototype and later variants |
@@ -73,6 +77,7 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ BOM, sourcing, cut list, validation CSVs
 - ✅ Assembly manual, supplier RFQ, drawing brief, visual BOM brief, photo shot list
 - ✅ Risks register (16 entries across acoustic, structural, ergonomic, supply, fit/finish)
+- ✅ Family-spec row set, resources notes, and jig-decision adjuncts
 - ✅ Wolfram notebook starter (3-DOF coupled oscillator)
 - ✅ CNC/laser/jig decision plan for public review
 - ✅ Build-log site (`site/index.html`)
