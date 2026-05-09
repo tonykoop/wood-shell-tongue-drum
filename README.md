@@ -88,6 +88,19 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ Capstone markdown and print-packet PDF generated from the repo sources
 - ⏳ Capstone .pptx refresh (requires python-pptx in the local generator environment)
 
+## Round 3 L2 Boundary
+
+For the Round 3 build-packet sweep, treat this repo as an L2 root-mode packet:
+excellent for design review and first-prototype planning, but not L3/build-ready
+evidence. The coupled cantilever-plus-Helmholtz plan is documented, yet the
+critical values still need real prototype measurements: Padauk effective K,
+port end correction, tongue pitch, chamber response, sustain, and seasonal
+joint behavior.
+
+The packet can advance only after the V1 Standard prototype has populated
+`validation.csv` and `validation-report.md` with measured Hz, cents error,
+Helmholtz response, tuning-pass notes, and post-rest drift.
+
 ## Highest-risk unknowns
 
 To be retired by Phase 1 measurements:
