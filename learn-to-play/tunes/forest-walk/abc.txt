@@ -1,0 +1,13 @@
+X:2
+T:Forest Walk
+C:Original — Heifer Zephyr / MIT License
+M:4/4
+L:1/4
+Q:1/4=76
+K:Dmin
+%% Original composition for wood-shell tongue drum, D natural minor
+%% Character: grounded, earthy, moving forward
+A, | A, C D E | F2 E D | C D E F | D4 |
+E F G A | G2 F E | D E F G | A4 |
+A c d e | d2 c A | G F E D | A,4 |
+A, | A, D F A | c2 A F | D E F D | A,4 |

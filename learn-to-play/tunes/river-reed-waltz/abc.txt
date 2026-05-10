@@ -1,0 +1,13 @@
+X:5
+T:River Reed Waltz
+C:Original — Heifer Zephyr / MIT License
+M:3/4
+L:1/8
+Q:1/4=84
+K:Dmin
+%% Original waltz for wood-shell tongue drum
+%% 3/4, D Aeolian, gentle and flowing
+A,2 | D4 F2 | A4 G2 | F4 E2 | D6 |
+E4 F2 | G4 A2 | c4 A2 | G6 |
+A4 c2 | d4 c2 | A4 G2 | F6 |
+G4 F2 | E4 D2 | A,4 D2 | D6 |
