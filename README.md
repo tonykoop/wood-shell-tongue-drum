@@ -8,6 +8,8 @@ Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-m
 
 *V1 Cylinder + Flat Top, Standard 16″ — recommended first prototype. Black Walnut staves, Padauk soundboard, A Kurd 11-tongue field, gu port for Helmholtz tuning. Computed `f_H = 194.6 Hz` sits at 0.88 × the A3 ding (220 Hz) — inside the coupled regime by design.*
 
+**Current V5 status:** prototype/planning packet with a V5 explorer surface. The design table, packet docs, print packet, and hero SVG are useful for review, but the repo is not build-ready or measured. Tongue tuning, Helmholtz coupling, Padauk material constants, shell response, CAD, DXF, and G-code all remain measurement- or calibration-gated. See [`v5-readiness.md`](v5-readiness.md), [`validation-loop.csv`](validation-loop.csv), [`visual-output-register.csv`](visual-output-register.csv), and [`explorer.html`](explorer.html).
+
 ## What's new in this design
 
 A round-body wood tongue drum with an enclosed cavity is not a commercial category at this depth. Three things distinguish it:
@@ -55,6 +57,8 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`design.md`](design.md)                       | Governing model, variant blocks, recommended prototype    |
 | [`wood-shell-tongue-drum-design-table.xlsx`](wood-shell-tongue-drum-design-table.xlsx) | Parametric workbook (190 formulas, 1 sheet)               |
 | [`family-spec.csv`](family-spec.csv)           | Twelve family rows spanning V1-V4 across Travel / Standard / Floor Pouf |
+| [`v5-readiness.md`](v5-readiness.md) / [`validation-loop.csv`](validation-loop.csv) | V5 explorer readiness gates and empirical validation loop |
+| [`visual-output-register.csv`](visual-output-register.csv) / [`explorer.html`](explorer.html) | Visual authority register and root explorer dashboard |
 | [`bom.csv`](bom.csv) / [`sourcing.csv`](sourcing.csv) / [`cut-list.csv`](cut-list.csv) / [`validation.csv`](validation.csv) | Manufacturing CSVs                                        |
 | [`assembly-manual.md`](assembly-manual.md)     | 7-phase build instructions                                |
 | [`supplier-rfq.md`](supplier-rfq.md)           | Q2 2026 batch supplier RFQ                                |
@@ -88,14 +92,14 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ Capstone markdown and print-packet PDF generated from the repo sources
 - ⏳ Capstone .pptx refresh (requires python-pptx in the local generator environment)
 
-## Round 3 L2 Boundary
+## Prototype Planning Boundary
 
-For the Round 3 build-packet sweep, treat this repo as an L2 root-mode packet:
-excellent for design review and first-prototype planning, but not L3/build-ready
-evidence. The coupled cantilever-plus-Helmholtz plan is documented, yet the
-critical values still need real prototype measurements: Padauk effective K,
-port end correction, tongue pitch, chamber response, sustain, and seasonal
-joint behavior.
+For current V5 work, treat this repo as a prototype/planning packet: excellent
+for design review and first-prototype planning, but not build-ready evidence.
+The coupled cantilever-plus-Helmholtz plan is documented, yet the critical
+values still need real prototype measurements: Padauk effective K, port end
+correction, tongue pitch, chamber response, sustain, and seasonal joint
+behavior.
 
 The packet can advance only after the V1 Standard prototype has populated
 `validation.csv` and `validation-report.md` with measured Hz, cents error,
