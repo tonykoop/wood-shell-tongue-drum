@@ -6,7 +6,7 @@ Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-m
 
 ![V1 Standard 16″ side section A-A](drawings/00-hero-v1-standard.svg)
 
-*V1 Cylinder + Flat Top, Standard 16″ — recommended first prototype. Black Walnut staves, Padauk soundboard, A Kurd 11-tongue field, gu port for Helmholtz tuning. Computed `f_H = 194.6 Hz` sits at 0.88 × the A3 ding (220 Hz) — inside the coupled regime by design.*
+*V1 Cylinder + Flat Top, Standard 16″ — recommended first prototype. Black Walnut staves, Padauk soundboard, A Kurd 11-tongue field, gu port for Helmholtz tuning. The design table estimates `f_H = 194.6 Hz`, or 0.88 × the A3 ding (220 Hz), which targets the coupled regime but still requires Phase 1 measurement.*
 
 **Current V5 status:** prototype/planning packet with a V5 explorer surface. The design table, packet docs, print packet, and hero SVG are useful for review, but the repo is not build-ready or measured. Tongue tuning, Helmholtz coupling, Padauk material constants, shell response, CAD, DXF, and G-code all remain measurement- or calibration-gated. See [`v5-readiness.md`](v5-readiness.md), [`validation-loop.csv`](validation-loop.csv), [`visual-output-register.csv`](visual-output-register.csv), and [`explorer.html`](explorer.html).
 
@@ -31,14 +31,14 @@ Four geometric variants × three size envelopes = twelve cells. Each cell carrie
 
 **Sizes:** Travel 12″ Ø · Standard 16″ Ø (Moroccan-ottoman scale) · Floor Pouf 20″ Ø.
 
-The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Three cells sit cleanly in the coupled regime (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a larger-than-preset gu port or a lower cavity/neck correction to reach coupling; V1 Travel sits right at the upper edge of the band.
+The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Current estimates put three cells in the target coupled band (V1 Standard, V1 Floor Pouf, V3 Standard); V2 cells need a larger-than-preset gu port or a lower cavity/neck correction to reach coupling; V1 Travel sits right at the upper edge of the band.
 
 ## Recommended first prototype
 
 **V1 Cylinder + Flat Top, Standard 16″, A Kurd, A3 ding (220 Hz), 11 tongues.** Justification:
 
 - Acoustic predictability — flat-cantilever physics has < 1 % empirical detuning on Tony's prior rectangular drums.
-- Helmholtz coupled out-of-the-box at `f_H/f_ding = 0.88`.
+- Design-table Helmholtz ratio targets the coupled band at `f_H/f_ding = 0.88`, pending measured cavity response.
 - All 11 A Kurd tongues fit within the 7″ radial cap with 8 % margin.
 - Lowest piece-count: 16 staves + 1 disc = 17 wood pieces.
 - Dual body-construction paths (stave or segmented) — pick the aesthetic, the physics is the same.
