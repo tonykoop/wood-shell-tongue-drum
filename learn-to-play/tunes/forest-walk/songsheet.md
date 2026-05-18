@@ -1,6 +1,6 @@
 # Forest Walk — Songsheet
 
-**Key:** D natural minor  **Tempo:** ♩= 76  **Meter:** 4/4  **Difficulty:** ★★☆  
+**Key:** D natural minor  **Tempo:** ♩= 76  **Meter:** 4/4  **Difficulty:** ★★☆
 **Range:** A3–E5  **License:** MIT (original — Heifer Zephyr)
 
 ## Music

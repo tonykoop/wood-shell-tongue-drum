@@ -3,7 +3,7 @@
 Your wood-shell tongue drum uses a **Ding** center note (D) with tongue fields arranged
 around a resonating wood vessel. Size variants:
 - **Travel** (12" OD): D4 ding
-- **Standard** (16" OD): A3 ding  
+- **Standard** (16" OD): A3 ding
 - **Floor Pouf** (20" OD): D3 ding
 
 This songbook is written for the **Standard** tuning (A3 ding). If you built a different

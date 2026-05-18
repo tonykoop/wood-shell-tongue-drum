@@ -1,6 +1,6 @@
 # Notes: Simple Gifts (Wood-Shell Tongue Drum)
 
-**Provenance:** Elder Joseph Brackett, Shaker hymn (1848). PD. 
+**Provenance:** Elder Joseph Brackett, Shaker hymn (1848). PD.
 Copland's arrangement is NOT used.
 
 **Range check:** E4–D5. The wood drum's warm tone suits the flowing, arching phrase shape.

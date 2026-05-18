@@ -1,6 +1,6 @@
 # Simple Gifts — Songsheet (Wood-Shell Tongue Drum)
 
-**Key:** F major  **Tempo:** ♩= 84  **Meter:** 4/4  **Difficulty:** ★★☆  
+**Key:** F major  **Tempo:** ♩= 84  **Meter:** 4/4  **Difficulty:** ★★☆
 **Range:** E4–D5  **Source:** Elder Joseph Brackett, Shaker hymn (1848), PD
 
 ## Music

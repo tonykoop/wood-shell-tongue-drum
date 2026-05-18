@@ -1,6 +1,6 @@
 # Scarborough Fair — Songsheet (Wood-Shell Tongue Drum)
 
-**Key:** D natural minor  **Tempo:** ♩= 72  **Meter:** 3/4  **Difficulty:** ★★☆  
+**Key:** D natural minor  **Tempo:** ♩= 72  **Meter:** 3/4  **Difficulty:** ★★☆
 **Range:** C4–D5  **Source:** Traditional English, PD
 
 ## Music
@@ -17,5 +17,5 @@ adapts it to D natural minor (with Bb where B would appear), which fits the D Ae
 wood tongue drum. The modal shift makes the tune slightly darker and more melancholic —
 appropriate for the instrument's warm wooden tone.
 
-**Provenance:** Traditional English ballad, public domain. Freshly arranged for D Aeolian — 
+**Provenance:** Traditional English ballad, public domain. Freshly arranged for D Aeolian —
 no Simon & Garfunkel arrangement rights used.

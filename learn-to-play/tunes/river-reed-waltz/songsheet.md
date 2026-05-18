@@ -1,6 +1,6 @@
 # River Reed Waltz — Songsheet
 
-**Key:** D Aeolian (natural minor)  **Tempo:** ♩= 84  **Meter:** 3/4  **Difficulty:** ★★★  
+**Key:** D Aeolian (natural minor)  **Tempo:** ♩= 84  **Meter:** 3/4  **Difficulty:** ★★★
 **Range:** A3–D5  **License:** MIT (original — Heifer Zephyr)
 
 ## Music
