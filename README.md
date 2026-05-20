@@ -42,7 +42,7 @@ The full Helmholtz/ding ratio matrix is in [`design.md`](design.md) §2.4. Curre
 - All 11 A Kurd tongues fit within the 7″ radial cap with 8 % margin.
 - Lowest piece-count: 16 staves + 1 disc = 17 wood pieces.
 - Dual body-construction paths (stave or segmented) — pick the aesthetic, the physics is the same.
-- Validated workflow components — stave glue-up, lathe truing, CNC slit routing — exercised on Tony's existing ashiko, conga, and tongue-drum repos.
+- Previously exercised workflow components — stave glue-up, lathe truing, CNC slit routing — from Tony's existing ashiko, conga, and tongue-drum repos.
 
 Detailed prototype spec (dimensions, tongue length schedule, joint tolerances) in [`design.md`](design.md) §4.
 
