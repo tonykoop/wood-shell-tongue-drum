@@ -1,7 +1,11 @@
 artifact_id,path,artifact_kind,role,authority,derived_from,dimension_claim,notes
-DT-001,wood-shell-tongue-drum-design-table.xlsx,design_table,design_table,fabrication,,none,"Current design table authority for planning; unmeasured and not build-ready until Phase 1 calibration."
+DT-001,wood-shell-tongue-drum-design-table.xlsx,design_table,design_table,pending_measurement,,none,"Current design table scaffold for planning; unmeasured and not build-ready until Phase 1 calibration."
 SVG-000,drawings/00-hero-v1-standard.svg,svg_preview,derived_preview,derived_preview,DT-001,derived_from_authority,"Hero side-section preview derived from packet/design-table assumptions; not a fabrication release."
 IMG-001,concepts/round-body-variants_concept-sheet.png,render_preview,concept,concept_only,,none,"Concept sheet for variant communication only; not dimensional authority."
 PDF-001,print-packet.pdf,drawing_pdf,story,reference_only,,none,"Printable packet output for review; does not supersede design table, measured data, CAD, or DXF."
 PPT-001,capstone-deck.pptx,render_preview,story,reference_only,,none,"Presentation artifact retained in repo; not a source for fabrication dimensions."
 HTML-001,site/index.html,render_preview,build_log,reference_only,,none,"Static build-log page; links to packet sources but does not control dimensions."
+CAD-000,cad/README.md,cad_plan,cad_staging,pending_measurement,DT-001,none,"CAD source is deferred; no SCAD/SolidWorks/STEP/STL authority exists in this recovery commit."
+DXF-000,drawings/README.md,dxf_plan,drawing_staging,pending_measurement,DT-001,none,"Fabrication DXF is deferred until measured/calibrated geometry exists."
+WL-001,wolfram-starter.wl,wolfram_source,model_scaffold,pending_measurement,DT-001,derived_from_authority,"Source-only modeling scaffold; no runtime output or measured calibration is claimed."
+DATA-000,data/README.md,measurement_plan,validation_gate,pending_measurement,,none,"Measured prototype data is absent; this row blocks L3 until physical data exists."

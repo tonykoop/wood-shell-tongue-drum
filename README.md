@@ -1,5 +1,7 @@
 # Wood Shell Tongue Drum
 
+Status: L2 V5 build-packet candidate
+
 Slit-tongue idiophone with an enclosed wooden resonator. A round-body counterpart to the rectangular-prism wood tongue drum, with **Helmholtz cavity coupling** absent from open designs. Four geometric variants × three size envelopes, all parametric and traceable to a single design table.
 
 Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-maker) catalogue.
@@ -8,7 +10,7 @@ Part of the [tonykoop/instrument-maker](https://github.com/tonykoop/instrument-m
 
 *V1 Cylinder + Flat Top, Standard 16″ — recommended first prototype. Black Walnut staves, Padauk soundboard, A Kurd 11-tongue field, gu port for Helmholtz tuning. The design table estimates `f_H = 194.6 Hz`, or 0.88 × the A3 ding (220 Hz), which targets the coupled regime but still requires Phase 1 measurement.*
 
-**Current V5 status:** prototype/planning packet with a V5 explorer surface. The design table, packet docs, print packet, and hero SVG are useful for review, but the repo is not build-ready or measured. Tongue tuning, Helmholtz coupling, Padauk material constants, shell response, CAD, DXF, and G-code all remain measurement- or calibration-gated. See [`v5-readiness.md`](v5-readiness.md), [`validation-loop.csv`](validation-loop.csv), [`visual-output-register.csv`](visual-output-register.csv), and [`explorer.html`](explorer.html).
+**Current V5 status:** L2 V5 build-packet candidate with pending measurement authority. The design table, packet docs, print packet, and hero SVG are useful for review, but the repo is not build-ready or measured. Tongue tuning, Helmholtz coupling, Padauk material constants, shell response, CAD, DXF, and G-code all remain measurement- or calibration-gated. No Round 2 recovery work added fabricated CAD geometry, DXF coordinates, or new tuning frequencies. See [`v5-readiness.md`](v5-readiness.md), [`tuning-gates.md`](tuning-gates.md), [`validation-loop.csv`](validation-loop.csv), [`visual-output-register.csv`](visual-output-register.csv), and [`explorer.html`](explorer.html).
 
 ## What's new in this design
 
@@ -57,7 +59,7 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`design.md`](design.md)                       | Governing model, variant blocks, recommended prototype    |
 | [`wood-shell-tongue-drum-design-table.xlsx`](wood-shell-tongue-drum-design-table.xlsx) | Parametric workbook (190 formulas, 1 sheet)               |
 | [`family-spec.csv`](family-spec.csv)           | Twelve family rows spanning V1-V4 across Travel / Standard / Floor Pouf |
-| [`v5-readiness.md`](v5-readiness.md) / [`validation-loop.csv`](validation-loop.csv) | V5 explorer readiness gates and empirical validation loop |
+| [`v5-readiness.md`](v5-readiness.md) / [`tuning-gates.md`](tuning-gates.md) / [`validation-loop.csv`](validation-loop.csv) | V5 authority notes, tongue-tuning gates, and empirical validation loop |
 | [`visual-output-register.csv`](visual-output-register.csv) / [`explorer.html`](explorer.html) | Visual authority register and root explorer dashboard |
 | [`bom.csv`](bom.csv) / [`sourcing.csv`](sourcing.csv) / [`cut-list.csv`](cut-list.csv) / [`validation.csv`](validation.csv) | Manufacturing CSVs                                        |
 | [`assembly-manual.md`](assembly-manual.md)     | 7-phase build instructions                                |
@@ -70,7 +72,7 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`wolfram-starter.wl`](wolfram-starter.wl)     | 3-DOF coupled-oscillator notebook starter                 |
 | [`wolfram/`](wolfram/) / [`jigs/`](jigs/) / [`data/`](data/) | Starter folders for notebook notes, fixture docs, and future measurements |
 | [`capstone-deck.md`](capstone-deck.md) / [`print-packet.md`](print-packet.md) | Recruiter-facing deck + shop-floor printable packet       |
-| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging |
+| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging; `cad/mcp-session-log.md` records that no MCP/CAD authoring session exists yet |
 | [`cnc/jig-and-template-plan.md`](cnc/jig-and-template-plan.md) | Fixture choice matrix for the first prototype and later variants |
 | [`site/index.html`](site/index.html)           | Build-log static site                                     |
 | [`concepts/`](concepts/)                       | Original concept sheet (ideation, not manufacturable)     |
@@ -81,11 +83,12 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 - ✅ BOM, sourcing, cut list, validation CSVs
 - ✅ Assembly manual, supplier RFQ, drawing brief, visual BOM brief, photo shot list
 - ✅ Risks register (16 entries across acoustic, structural, ergonomic, supply, fit/finish)
-- ✅ Family-spec row set, resources notes, and jig-decision adjuncts
+- ✅ Family-spec row set, resources notes, tuning gates, and jig-decision adjuncts
 - ✅ Wolfram notebook starter (3-DOF coupled oscillator)
 - ✅ CNC/laser/jig decision plan for public review
 - ✅ Build-log site (`site/index.html`)
-- ✅ Hero side-section drawing (`drawings/00-hero-v1-standard.svg`)
+- ✅ Hero side-section preview (`drawings/00-hero-v1-standard.svg`; derived preview only, not fabrication authority)
+- ✅ V5 authority register and MCP-session-log stub
 - ⏳ Phase 1 prototype: V1 Cylinder · Flat at 16″ Standard
 - ⏳ SolidWorks CAD assembly (deferred until first-prototype calibration)
 - ⏳ Auto-generated SVG sheets 01–09 from `scripts/generate_drawings.py`
