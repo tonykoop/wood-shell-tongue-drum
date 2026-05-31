@@ -176,49 +176,7 @@ Print["Sustain hint: closer f1 and f2 -> stronger bass/mid coupling."];
    Helmholtz / ding ratio cross the coupled band.
 *)
 
-manipulateCell = Manipulate[
-  Module[{A, V, Lneck, fH, ratio},
-    A = Pi (gu/2)^2;
-    V = If[variant == "V1", Pi (shellODEstimate/2)^2 hh,
-        If[variant == "V2", Pi (shellODEstimate/2)^2 hh + (2/3) Pi (shellODEstimate/2)^2 dr,
-        If[variant == "V3", (2/3) Pi (shellODEstimate/2)^3,
-                            (2/3) Pi (shellODEstimate/2)^3 + (2/3) Pi (shellODEstimate/2)^2 dr]]];
-    Lneck = If[variant == "V1" || variant == "V3", sbThkEstimate, sbThkEstimate + dr/2];
-    fH = (cAir/(2 Pi)) Sqrt[A/(V Lneck)];
-    ratio = fH / fFromMidi[ding];
-    Column[{
-      Row[{"Helmholtz f_H = ", NumberForm[fH, 5], " Hz"}],
-      Row[{"Ding         = ", NumberForm[fFromMidi[ding], 5], " Hz"}],
-      Row[{"Ratio        = ", NumberForm[ratio, 3],
-           If[0.80 <= ratio <= 1.20, " <- coupled", " <- mistuned"]}]
-    }]
-  ],
-  {{variant, "V1"}, {"V1", "V2", "V3", "V4"}, ControlType -> RadioButtonBar},
-  {{ding, 57, "ding MIDI"}, 50, 70, 1},
-  {{gu, 2.5, "gu port (in)"}, 0.5, 4.0, 0.05},
-  {{hh, 8.0, "shell height (in)"}, 4.0, 12.0, 0.1},
-  {{dr, 0.75, "dome rise (in)"}, 0.0, 1.5, 0.05}
-];
-
-(* manipulateCell *)  (* uncomment to display *)
-
-(* === 7. Audio synthesis (preview) === *)
-
-(* AudioGenerator can render the predicted tongue field; useful for
-   pre-build pitch-target previews. *)
-
-scaleAKurdEstimate = {220.00, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25,
-              587.33, 659.26, 783.99, 880.00};
-
-(* tonguePulse[freq] returns a short attack-decay envelope over a sine
-   approximation of the tongue's first mode *)
-tonguePulse[freq_, dur_:0.6] :=
-  Sound[SoundNote["", dur, "FluteSection", SoundVolume -> 0.6, freq]];
-
-(* Uncomment to play the predicted A Kurd scale: *)
-(* AudioPlay[Sound[Table[tonguePulse[f], {f, scaleAKurdEstimate}]]] *)
-
-(* === 8. Notes for the per-family corrections database === *)
+(* === 7. Notes for the per-family corrections database === *)
 
 (*
    When the first prototype is tuned, run scripts/record_measurement.py
@@ -231,3 +189,58 @@ tonguePulse[freq_, dur_:0.6] :=
    These propagate to every sibling packet in the wood-shell-tongue-drum
    family on next packet generation.
 *)
+
+(* === 8. Interactive app (final top-level expression) === *)
+
+(*
+   Bare Manipulate so Get[] returns Head Manipulate and CloudDeploy
+   produces an interactive app. SaveDefinitions -> True captures the
+   helper definitions above (fFromMidi, cAir, shellODEstimate, etc.).
+   Drag the gu port, ding pitch, shell height, and dome rise; watch the
+   Helmholtz / ding ratio cross the coupled band. All outputs are
+   EMPIRICAL ESTIMATES, not measured fabrication authority.
+*)
+
+Manipulate[
+  Module[{A, V, Lneck, fH, fD, ratio, coupledQ, gusweep},
+    A = Pi (gu/2)^2;
+    V = If[variant == "V1", Pi (shellODEstimate/2)^2 hh,
+        If[variant == "V2", Pi (shellODEstimate/2)^2 hh + (2/3) Pi (shellODEstimate/2)^2 dr,
+        If[variant == "V3", (2/3) Pi (shellODEstimate/2)^3,
+                            (2/3) Pi (shellODEstimate/2)^3 + (2/3) Pi (shellODEstimate/2)^2 dr]]];
+    Lneck = If[variant == "V1" || variant == "V3", sbThkEstimate, sbThkEstimate + dr/2];
+    fH = (cAir/(2 Pi)) Sqrt[A/(V Lneck)];
+    fD = fFromMidi[ding];
+    ratio = fH/fD;
+    coupledQ = 0.80 <= ratio <= 1.20;
+    gusweep = Function[{g},
+      With[{a = Pi (g/2)^2},
+        (cAir/(2 Pi)) Sqrt[a/(V Lneck)]/fD]];
+    Column[{
+      Style["EMPIRICAL ESTIMATES \[Dash] planning values, not measured", Bold, Darker[Red]],
+      Grid[{
+        {"Variant", variant},
+        {"Helmholtz f_H (Hz)", NumberForm[fH, 5]},
+        {"Ding f (Hz)", NumberForm[fD, 5]},
+        {"Cavity volume (in^3)", NumberForm[V, 5]},
+        {"Port area (in^2)", NumberForm[A, 4]},
+        {"f_H / ding ratio", NumberForm[ratio, 3]},
+        {"Coupled band (0.80-1.20)", If[coupledQ, "coupled", "mistuned"]}
+      }, Alignment -> Left, Frame -> All, Background -> {None, {{LightYellow}}}],
+      Plot[gusweep[g], {g, 0.5, 4.0},
+        PlotRange -> {0, 2.0},
+        AxesLabel -> {"gu port (in)", "f_H / ding"},
+        Epilog -> {
+          {Lighter[Green, 0.7], Rectangle[{0.5, 0.80}, {4.0, 1.20}]},
+          {Red, PointSize[0.02], Point[{gu, ratio}]}},
+        PlotLabel -> "EMPIRICAL ESTIMATE: ratio vs port size",
+        ImageSize -> 360]
+    }]
+  ],
+  {{variant, "V1", "shell variant"}, {"V1", "V2", "V3", "V4"}, ControlType -> RadioButtonBar},
+  {{ding, 57, "ding MIDI"}, 50, 70, 1},
+  {{gu, 2.5, "gu port (in)"}, 0.5, 4.0, 0.05},
+  {{hh, 8.0, "shell height (in)"}, 4.0, 12.0, 0.1},
+  {{dr, 0.75, "dome rise (in)"}, 0.0, 1.5, 0.05},
+  SaveDefinitions -> True
+]
