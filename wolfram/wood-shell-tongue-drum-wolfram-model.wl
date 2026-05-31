@@ -1,5 +1,9 @@
 (* ::Package:: *)
 
+(* Wolfram QA 2026-05-30: estimate - pending measurement, not fabrication authority.
+   Variables and associations with Estimate suffix are planning values only unless
+   later replaced by measured validation data or reviewed design-table authority. *)
+
 (* Wood Shell Tongue Drum — Acoustic Physics Starter
    Heifer Zephyr Instruments — Tony Koop
    Open in Wolfram Desktop or Wolfram Cloud.
@@ -24,23 +28,23 @@
 (* All dimensions in inches; conversions to SI happen below. *)
 
 (* Recommended first prototype: V1 Standard 16in *)
-shellOD       = 16.0;          (* shell outer diameter *)
-shellHeight   = 8.0;           (* cylinder body height *)
-shellThk      = 0.625;         (* wall thickness, finished *)
-sbThk         = 0.375;         (* soundboard thickness (Padauk) *)
+shellODEstimate       = 16.0;          (* shell outer diameter *)
+shellHeightEstimate   = 8.0;           (* cylinder body height *)
+shellThkEstimate      = 0.625;         (* wall thickness, finished *)
+sbThkEstimate         = 0.375;         (* soundboard thickness (Padauk) *)
 sbWood        = "Padauk";      (* one of Padauk, Cherry, Walnut, Maple, Cedar *)
 shellWood     = "BlackWalnut"; (* shell material *)
-guPortDia     = 2.5;           (* gu port diameter, initial preset *)
-domeRise      = 0.0;           (* 0 for flat top, 0.75 for V2 Std *)
+guPortDiaEstimate     = 2.5;           (* gu port diameter, initial preset *)
+domeRiseEstimate      = 0.0;           (* 0 for flat top, 0.75 for V2 Std *)
 
-dingMidi      = 57;            (* A3 *)
-nTongues      = 11;
-tongueWidth   = 1.25;
-slitKerf      = 0.125;
+dingMidiEstimate      = 57;            (* A3 *)
+nTonguesEstimate      = 11;
+tongueWidthEstimate   = 1.25;
+slitKerfEstimate      = 0.125;
 
 (* Material library — cantilever K (imperial composite) and elastic
    moduli. Cross-references the workbook material library, rows 19-25. *)
-materials = <|
+materialsEstimate = <|
   "Padauk"       -> <|"K" -> 24438., "E" -> 11.0*^9, "rho" -> 745.|>,
   "Wenge"        -> <|"K" -> 27103., "E" -> 15.8*^9, "rho" -> 870.|>,
   "Cherry"       -> <|"K" -> 27275., "E" -> 10.3*^9, "rho" -> 560.|>,
@@ -66,16 +70,16 @@ LFlat[K_, t_, f_]    := Sqrt[K * t / f];
 LCurved[K_, t_, f_, mult_:1.025] := mult * Sqrt[K * t / f];
 
 (* Predicted ding tongue length, V1 vs V2 *)
-KSb = materials[sbWood, "K"];
-fDing = fFromMidi[dingMidi];
+KSb = materialsEstimate[sbWood, "K"];
+fDing = fFromMidi[dingMidiEstimate];
 
-LDingFlat   = LFlat[KSb, sbThk, fDing];
-LDingCurved = LCurved[KSb, sbThk, fDing];
+LDingFlat   = LFlat[KSb, sbThkEstimate, fDing];
+LDingCurved = LCurved[KSb, sbThkEstimate, fDing];
 
 (* Print *)
 Print["Predicted tongue lengths for ", sbWood,
-      " soundboard, ", sbThk, " in thick:"];
-Print["  Ding (MIDI ", dingMidi, ", ", NumberForm[fDing, 5], " Hz):"];
+      " soundboard, ", sbThkEstimate, " in thick:"];
+Print["  Ding (MIDI ", dingMidiEstimate, ", ", NumberForm[fDing, 5], " Hz):"];
 Print["    flat   = ", NumberForm[LDingFlat, 4], " in"];
 Print["    curved = ", NumberForm[LDingCurved, 4], " in (multiplier 1.025)"];
 
@@ -86,14 +90,14 @@ Print["    curved = ", NumberForm[LDingCurved, 4], " in (multiplier 1.025)"];
 fHelmholtz[V_, A_, Lneck_] := (cAir / (2 Pi)) * Sqrt[A / (V * Lneck)];
 
 (* Volume formulas per variant (in cubic inches) *)
-volV1 = Pi * (shellOD/2)^2 * shellHeight;                          (* cyl flat *)
-volV2 = volV1 + (2/3)*Pi*(shellOD/2)^2 * domeRise;                 (* cyl + dome *)
-volV3 = (2/3) * Pi * (shellOD/2)^3;                                (* hemi flat *)
-volV4 = volV3 + (2/3)*Pi*(shellOD/2)^2 * domeRise;                 (* hemi + dome *)
+volV1 = Pi * (shellODEstimate/2)^2 * shellHeightEstimate;                          (* cyl flat *)
+volV2 = volV1 + (2/3)*Pi*(shellODEstimate/2)^2 * domeRiseEstimate;                 (* cyl + dome *)
+volV3 = (2/3) * Pi * (shellODEstimate/2)^3;                                (* hemi flat *)
+volV4 = volV3 + (2/3)*Pi*(shellODEstimate/2)^2 * domeRiseEstimate;                 (* hemi + dome *)
 
-portArea = Pi * (guPortDia/2)^2;
-neckFlat   = sbThk;
-neckDomed  = sbThk + domeRise/2;
+portArea = Pi * (guPortDiaEstimate/2)^2;
+neckFlat   = sbThkEstimate;
+neckDomed  = sbThkEstimate + domeRiseEstimate/2;
 
 fHV1 = fHelmholtz[volV1, portArea, neckFlat];
 fHV2 = fHelmholtz[volV2, portArea, neckDomed];
@@ -101,7 +105,7 @@ fHV3 = fHelmholtz[volV3, portArea, neckFlat];
 fHV4 = fHelmholtz[volV4, portArea, neckDomed];
 
 Print[];
-Print["Helmholtz frequencies (current preset, gu port = ", guPortDia, " in):"];
+Print["Helmholtz frequencies (current preset, gu port = ", guPortDiaEstimate, " in):"];
 Print["  V1 (cyl + flat)  : ", NumberForm[fHV1, 5], " Hz, ratio ",
       NumberForm[fHV1/fDing, 3]];
 Print["  V2 (cyl + dome)  : ", NumberForm[fHV2, 5], " Hz, ratio ",
@@ -115,8 +119,8 @@ Print["  Coupled regime: 0.80 <= ratio <= 1.20"];
 (* === 5. 3-DOF coupled-oscillator model === *)
 
 (*
-   Reduced model: tongue (m1, k1), shell wall (m2, k2), air (m3, k3)
-   coupled by k12 (rabbet stiffness) and k23 (wall-air compliance).
+   Reduced model: tongue (m1Estimate, k1), shell wall (m2Estimate, k2), air (m3Estimate, k3)
+   coupled by k12Estimate (rabbet stiffness) and k23Estimate (wall-air compliance).
    Solving the 3x3 mass-spring system yields three eigenfrequencies;
    the lower two are dominated by tongue and Helmholtz, the highest
    by the shell wall mode. The split between the tongue eigenfreq
@@ -131,27 +135,27 @@ Print["  Coupled regime: 0.80 <= ratio <= 1.20"];
 
 (* Effective masses (kg) and stiffnesses (N/m) -- order-of-magnitude *)
 (* Tongue: half-beam approximation, treat as single-DOF cantilever *)
-m1 = 0.020;            (* ~20 g effective tongue mass *)
-k1 = (2 Pi fDing)^2 * m1;
+m1Estimate = 0.020;            (* ~20 g effective tongue mass *)
+k1 = (2 Pi fDing)^2 * m1Estimate;
 
 (* Shell wall: ring-mode mass, large stiffness *)
-m2 = 0.5;              (* ~500 g effective wall mass *)
-k2 = (2 Pi 800.)^2 * m2;   (* assumed ring mode ~800 Hz *)
+m2Estimate = 0.5;              (* ~500 g effective wall mass *)
+k2 = (2 Pi 800.)^2 * m2Estimate;   (* assumed ring mode ~800 Hz *)
 
 (* Air cavity: lumped Helmholtz oscillator *)
-m3 = 0.01;             (* effective air-plug mass at port *)
-k3 = (2 Pi fHV1)^2 * m3;
+m3Estimate = 0.01;             (* effective air-plug mass at port *)
+k3 = (2 Pi fHV1)^2 * m3Estimate;
 
 (* Coupling stiffnesses *)
-k12 = 0.10 * k1;       (* 10% of tongue stiffness through rabbet *)
-k23 = 0.05 * k3;       (* 5% wall-air through compliance *)
+k12Estimate = 0.10 * k1;       (* 10% of tongue stiffness through rabbet *)
+k23Estimate = 0.05 * k3;       (* 5% wall-air through compliance *)
 
 KMat = {
-  {k1 + k12,   -k12,   0.0  },
-  {-k12,       k2 + k12 + k23, -k23},
-  {0.0,        -k23,   k3 + k23}
+  {k1 + k12Estimate,   -k12Estimate,   0.0  },
+  {-k12Estimate,       k2 + k12Estimate + k23Estimate, -k23Estimate},
+  {0.0,        -k23Estimate,   k3 + k23Estimate}
 };
-MMat = DiagonalMatrix[{m1, m2, m3}];
+MMat = DiagonalMatrix[{m1Estimate, m2Estimate, m3Estimate}];
 
 eigSystem = Eigensystem[N[Inverse[MMat] . KMat]];
 omegas = Sqrt[eigSystem[[1]]];
@@ -175,11 +179,11 @@ Print["Sustain hint: closer f1 and f2 -> stronger bass/mid coupling."];
 manipulateCell = Manipulate[
   Module[{A, V, Lneck, fH, ratio},
     A = Pi (gu/2)^2;
-    V = If[variant == "V1", Pi (shellOD/2)^2 hh,
-        If[variant == "V2", Pi (shellOD/2)^2 hh + (2/3) Pi (shellOD/2)^2 dr,
-        If[variant == "V3", (2/3) Pi (shellOD/2)^3,
-                            (2/3) Pi (shellOD/2)^3 + (2/3) Pi (shellOD/2)^2 dr]]];
-    Lneck = If[variant == "V1" || variant == "V3", sbThk, sbThk + dr/2];
+    V = If[variant == "V1", Pi (shellODEstimate/2)^2 hh,
+        If[variant == "V2", Pi (shellODEstimate/2)^2 hh + (2/3) Pi (shellODEstimate/2)^2 dr,
+        If[variant == "V3", (2/3) Pi (shellODEstimate/2)^3,
+                            (2/3) Pi (shellODEstimate/2)^3 + (2/3) Pi (shellODEstimate/2)^2 dr]]];
+    Lneck = If[variant == "V1" || variant == "V3", sbThkEstimate, sbThkEstimate + dr/2];
     fH = (cAir/(2 Pi)) Sqrt[A/(V Lneck)];
     ratio = fH / fFromMidi[ding];
     Column[{
@@ -203,7 +207,7 @@ manipulateCell = Manipulate[
 (* AudioGenerator can render the predicted tongue field; useful for
    pre-build pitch-target previews. *)
 
-scaleAKurd = {220.00, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25,
+scaleAKurdEstimate = {220.00, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25,
               587.33, 659.26, 783.99, 880.00};
 
 (* tonguePulse[freq] returns a short attack-decay envelope over a sine
@@ -212,7 +216,7 @@ tonguePulse[freq_, dur_:0.6] :=
   Sound[SoundNote["", dur, "FluteSection", SoundVolume -> 0.6, freq]];
 
 (* Uncomment to play the predicted A Kurd scale: *)
-(* AudioPlay[Sound[Table[tonguePulse[f], {f, scaleAKurd}]]] *)
+(* AudioPlay[Sound[Table[tonguePulse[f], {f, scaleAKurdEstimate}]]] *)
 
 (* === 8. Notes for the per-family corrections database === *)
 
