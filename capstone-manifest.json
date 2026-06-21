@@ -119,5 +119,23 @@
     "Generated and concept images are support only; they do not control tongue lengths, gu-port geometry, shell dimensions, or CNC toolpaths.",
     "PPTX and PDF artifacts exist in the repo, but they do not upgrade the packet beyond prototype/planning readiness.",
     "Use the HTML file for browser review of current V5 gates."
-  ]
+  ],
+  "engineering": {
+    "wolfram": [
+      {
+        "source_file": "idiophones/wood-shell-tongue-drum/wolfram/wood-shell-tongue-drum-wolfram-model.wl",
+        "cloud_path": "Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-wolfram-model.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-wolfram-model.wl",
+        "permission": "Public-Execute",
+        "kind": "geometry-model"
+      },
+      {
+        "source_file": "idiophones/wood-shell-tongue-drum/wood-shell-tongue-drum-starter.wl",
+        "cloud_path": "Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-starter.wl",
+        "cloud_url": "https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-starter.wl",
+        "permission": "Public-Execute",
+        "kind": "acoustics-starter"
+      }
+    ]
+  }
 }

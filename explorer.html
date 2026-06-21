@@ -1,264 +1,33 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wood Shell Tongue Drum V5 Explorer</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #1d1b18;
-      --muted: #5c605b;
-      --line: #d7d0c2;
-      --paper: #faf8f3;
-      --panel: #ffffff;
-      --accent: #6f3c1d;
-      --warn: #9b5d00;
-      --ok: #236247;
-      --blue: #2f5c89;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-    }
-    header {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-      gap: 28px;
-      align-items: center;
-      padding: 34px clamp(18px, 5vw, 64px) 26px;
-      background: #eee6d8;
-      border-bottom: 1px solid var(--line);
-    }
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 4.2rem);
-      line-height: 1;
-      font-weight: 820;
-      letter-spacing: 0;
-    }
-    h2 { margin: 0 0 12px; font-size: 1.08rem; }
-    p { margin: 0; line-height: 1.55; }
-    a { color: var(--blue); font-weight: 700; }
-    .status {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 10px;
-      border: 1px solid #d1aa70;
-      background: #fff7e6;
-      color: #6b4100;
-      font-size: 0.88rem;
-      font-weight: 800;
-    }
-    .hero-media {
-      min-height: 260px;
-      background: #fff;
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      max-height: 380px;
-      object-fit: contain;
-      display: block;
-    }
-    main { padding: 28px clamp(18px, 5vw, 64px) 48px; }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    .links a {
-      display: inline-block;
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      text-decoration: none;
-    }
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
-    }
-    button {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      color: var(--ink);
-      padding: 8px 12px;
-      font: inherit;
-      font-weight: 750;
-      cursor: pointer;
-    }
-    button[aria-pressed="true"] {
-      border-color: var(--accent);
-      background: #fff0e8;
-      color: var(--accent);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-    section {
-      grid-column: span 6;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      padding: 18px;
-    }
-    .wide { grid-column: 1 / -1; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-    }
-    .card {
-      min-height: 116px;
-      border: 1px solid var(--line);
-      background: #fff;
-      padding: 12px;
-    }
-    .label {
-      display: inline-block;
-      margin-bottom: 8px;
-      padding: 3px 7px;
-      color: #fff;
-      background: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 800;
-    }
-    .blocked .label { background: #8d2d24; }
-    .required .label { background: var(--warn); }
-    .present .label { background: var(--ok); }
-    .card h3 { margin: 0 0 6px; font-size: 1rem; }
-    .card p, li { color: var(--muted); font-size: 0.95rem; }
-    ul { margin: 0; padding-left: 18px; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
-    th, td {
-      padding: 9px 8px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-    th { background: #f3eee5; }
-    code {
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-      font-size: 0.9em;
-    }
-    [hidden] { display: none !important; }
-    @media (max-width: 860px) {
-      header { grid-template-columns: 1fr; }
-      section { grid-column: 1 / -1; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div>
-      <div class="status">Prototype/planning packet with V5 explorer</div>
-      <h1>Wood shell tongue drum</h1>
-      <p>This explorer summarizes the current packet without upgrading planning estimates into measured claims. The workbook, packet docs, print packet, and hero SVG are useful review assets; tongue tuning, shell coupling, material constants, CAD, DXF, and G-code still need Phase 1 evidence.</p>
-      <div class="links">
-        <a href="v5-readiness.md">Readiness notes</a>
-        <a href="capstone-manifest.json">Manifest</a>
-        <a href="validation-loop.csv">Validation loop</a>
-        <a href="visual-output-register.csv">Visual register</a>
-        <a href="design.md">Design sheet</a>
-      </div>
-    </div>
-    <div class="hero-media" aria-label="Derived preview, not fabrication release">
-      <img src="images/hero-render.png" alt="wood-shell-tongue-drum — concept render" loading="lazy">
-    </div>
-  </header>
-  <main>
-    <div class="toolbar" aria-label="Explorer filters">
-      <button type="button" data-filter="all" aria-pressed="true">All</button>
-      <button type="button" data-filter="required">Measurement Required</button>
-      <button type="button" data-filter="blocked">Deferred</button>
-      <button type="button" data-filter="present">Present Evidence</button>
-    </div>
-    <div class="grid">
-      <section class="wide" data-kind="required">
-        <h2>Current gates</h2>
-        <div class="cards" id="gates"></div>
-      </section>
-      <section class="wide" id="images">
-        <h2>Images</h2>
-        <div class="cards">
-          <figure style="margin:0"><img src="images/hero-render.png" alt="wood-shell-tongue-drum — hero render" loading="lazy" style="width:100%;display:block"></figure>
-          <figure style="margin:0"><img src="images/family-group.png" alt="wood-shell-tongue-drum — family group" loading="lazy" style="width:100%;display:block"></figure>
-          <figure style="margin:0"><img src="images/exploded-diagram.png" alt="wood-shell-tongue-drum — exploded diagram" loading="lazy" style="width:100%;display:block"></figure>
-          <figure style="margin:0"><img src="images/macro/tongue-field.png" alt="wood-shell-tongue-drum — tongue field macro" loading="lazy" style="width:100%;display:block"></figure>
-        </div>
-      </section>
-      <section data-kind="present">
-        <h2>Present packet evidence</h2>
-        <table>
-          <thead><tr><th>Artifact</th><th>Use</th></tr></thead>
-          <tbody>
-            <tr><td><code>wood-shell-tongue-drum-design-table.xlsx</code></td><td>Parametric planning source, not measured shop release.</td></tr>
-            <tr><td><code>design.md</code></td><td>Governing model and V1 Standard first-prototype rationale.</td></tr>
-            <tr><td><code>validation.csv</code></td><td>Measurement protocol with empty measured-value fields.</td></tr>
-            <tr><td><code>drawings/00-hero-v1-standard.svg</code></td><td>Derived preview for review, not DXF/CAD authority.</td></tr>
-          </tbody>
-        </table>
-      </section>
-      <section data-kind="blocked">
-        <h2>Deferred authority</h2>
-        <ul>
-          <li>SolidWorks/STEP/STL CAD waits for Phase 1 calibration.</li>
-          <li>DXF and G-code wait for calibrated CAD/CAM.</li>
-          <li>Concept sheets and deck visuals do not control tongue lengths, gu ports, or toolpaths.</li>
-          <li>Repeatable packet claims wait for measured tuning, shell seal, and seasonal drift data.</li>
-        </ul>
-      </section>
-    </div>
-  
-<section id="wolfram-interactive">
-  <h2>Interactive Wolfram Model</h2>
-  <p>Live parametric explorer (empirical estimates &mdash; not fabrication authority).</p>
-  <iframe src="https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/idiophones/wood-shell-tongue-drum/wood-shell-tongue-drum-interactive" style="width:100%;height:780px;border:1px solid #ccc;" loading="lazy"></iframe>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wood Shell Tongue Drum — Explorer</title>
+<style>
+:root{--ink:#2a2018;--walnut:#5b3a29;--accent:#a64b2a;--rule:#e7ddcc;--paper:#fcfaf5;--muted:#8a7d6b;--mono:ui-monospace,Menlo,monospace;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--serif);color:var(--ink);background:var(--paper);line-height:1.55}
+.wrap{max-width:920px;margin:0 auto;padding:32px 20px 64px}
+header h1{font-size:30px;margin:.2em 0 .1em}.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+.status{font-family:var(--mono);font-size:12px;color:var(--muted);margin:0 0 18px}
+section{margin:30px 0;padding-top:18px;border-top:1px solid var(--rule)}
+section h2{font-size:20px;color:var(--walnut);margin:.2em 0 .6em}
+p.intro{font-size:17px}
+.wf-frame{width:100%;height:660px;border:1px solid var(--rule);border-radius:8px;background:#fff;margin:6px 0}
+.wf-actions{margin:6px 0}
+.btn{display:inline-block;padding:7px 14px;border-radius:6px;text-decoration:none;font-family:var(--mono);font-size:13px;background:#efe7d8;color:var(--walnut)}
+.btn.primary{background:var(--accent);color:#fff}
+ul.files{font-family:var(--mono);font-size:14px;columns:2;gap:24px}
+ul.files a{color:var(--walnut)}
+.muted{color:var(--muted);font-size:13px}
+footer{margin-top:44px;color:var(--muted);font-size:12px;font-family:var(--mono)}
+</style></head>
+<body><div class="wrap">
+<header><span class="eyebrow">Instrument Explorer</span><h1>Wood Shell Tongue Drum</h1>
+<p class="status">Status: L2 V5 build-packet candidate</p></header>
+<p class="intro">**Owner:** Tony Koop · Heifer Zephyr Instruments **Family:** Slit-tongue idiophone with enclosed wooden resonator (round-body) **Members:** four geometric variants (V1–V4) × three size envelopes (Travel 12″, Standard 16″, Floor Pouf 20″) **Status:** Design v1 — formulas parametric in `wood-shell-tongue-drum-design-table.xlsx`; no physical prototype yet **Recommended first prototype:** **V1 Cylinder + Flat Top, Standard 16″, A Kurd**</p>
+<section id="wolfram"><h2><span class="eyebrow">Run it — Wolfram Cloud</span>Interactive acoustic model</h2>
+<div class="wf-actions"><a class="btn primary" href="https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-wolfram-model.wl" target="_blank" rel="noopener">&#8599; Open full interactive model</a></div><iframe class="wf-frame" src="https://www.wolframcloud.com/obj/wrfcoin/Musical_Instruments/percussion/wood-shell-tongue-drum/wood-shell-tongue-drum-wolfram-model.wl" title="Interactive Wolfram model" loading="lazy"></iframe><p class="muted">Live interactive acoustic model (Wolfram Cloud, Public-Execute). Drag the sliders; every value is computed from <strong>estimate placeholders</strong> — pending measurement, not fabrication authority.</p>
 </section>
-</main>
-  <script>
-    const gates = [
-      ["required", "Padauk K", "Back-solve the actual K constant from a calibration tongue before trusting the library value."],
-      ["required", "A Kurd tuning", "Measure all V1 Standard tongues and record Hz, cents error, and environment."],
-      ["required", "Helmholtz coupling", "Measure cavity response and final gu-port diameter instead of treating estimates as proof."],
-      ["required", "Shell seal", "Check rim flatness, wall thickness, and air leaks before final soundboard glue-up."],
-      ["blocked", "CAD", "Generate CAD only after Phase 1 measurements are folded back into the workbook."],
-      ["blocked", "DXF/G-code", "Release fabrication files only from calibrated CAD/CAM, not concept imagery."],
-      ["present", "Visual register", "Current SVG, concept, deck, print, and site assets are tracked by authority level."]
-    ];
-    function card([kind, title, text]) {
-      const node = document.createElement("article");
-      node.className = `card ${kind}`;
-      node.dataset.kind = kind;
-      node.innerHTML = `<span class="label">${kind}</span><h3><code>${title}</code></h3><p>${text}</p>`;
-      return node;
-    }
-    document.getElementById("gates").append(...gates.map(card));
-    document.querySelectorAll("button[data-filter]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-        document.querySelectorAll("button[data-filter]").forEach((b) => {
-          b.setAttribute("aria-pressed", String(b === button));
-        });
-        document.querySelectorAll("[data-kind]").forEach((node) => {
-          node.hidden = filter !== "all" && node.dataset.kind !== filter;
-        });
-        document.querySelectorAll(".card").forEach((node) => {
-          node.hidden = filter !== "all" && node.dataset.kind !== filter;
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+<section id="files"><h2>Build packet</h2>
+<ul class="files"><li><a href="design.md" target="_blank">design.md</a></li><li><a href="bom.csv" target="_blank">bom.csv</a></li><li><a href="cut-list.csv" target="_blank">cut-list.csv</a></li><li><a href="visual-output-register.csv" target="_blank">visual-output-register.csv</a></li><li><a href="validation.csv" target="_blank">validation.csv</a></li><li><a href="sourcing.csv" target="_blank">sourcing.csv</a></li><li><a href="family-spec.csv" target="_blank">family-spec.csv</a></li><li><a href="risks.md" target="_blank">risks.md</a></li></ul></section>
+<footer>Generated by wolfram-cloud-sync/generate_explorer.py · wood-shell-tongue-drum</footer>
+</div></body></html>
