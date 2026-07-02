@@ -72,10 +72,11 @@ The wood shell tongue drum is a 2-DOF coupled oscillator: the cantilever tongue 
 | [`wolfram-starter.wl`](wolfram-starter.wl)     | 3-DOF coupled-oscillator notebook starter                 |
 | [`wolfram/`](wolfram/) / [`jigs/`](jigs/) / [`data/`](data/) | Starter folders for notebook notes, fixture docs, and future measurements |
 | [`capstone-deck.md`](capstone-deck.md) / [`print-packet.md`](print-packet.md) | Recruiter-facing deck + shop-floor printable packet       |
-| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging; `cad/mcp-session-log.md` records that no MCP/CAD authoring session exists yet |
+| [`cad/`](cad/) / [`cnc/`](cnc/)                | Toolpath plans, jig decisions, laser templates, CAD staging; `cad/wood-shell-tongue-drum.scad` is a parametric shell+soundboard+tongue-layout envelope (`pending_measurement`); `cad/mcp-session-log.md` records provenance |
 | [`cnc/jig-and-template-plan.md`](cnc/jig-and-template-plan.md) | Fixture choice matrix for the first prototype and later variants |
 | [`site/index.html`](site/index.html)           | Build-log static site                                     |
 | [`concepts/`](concepts/)                       | Original concept sheet (ideation, not manufacturable)     |
+| [`evolution/`](evolution/)                     | Evolution-pipeline Stage 0 intake: master manifest, design-intent, revision register (Gate A not yet run) |
 
 ## Build status
 

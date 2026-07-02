@@ -6,6 +6,12 @@ This folder holds the SolidWorks parametric assembly and any exported neutral-fo
 
 **Empty at first commit.** SolidWorks files are produced after the first prototype's measurements are folded back into the workbook so the CAD reflects calibrated, not estimated, dimensions.
 
+**Update 2026-07-01:** `wood-shell-tongue-drum.scad` was added as a parametric
+OpenSCAD *planning envelope* (shell + soundboard + tongue position/length
+layout reference marks from design.md §4 and drawing-brief.md Sheet 03). It
+is `pending_measurement`, does not model slit-routing cut geometry, and does
+not replace the SolidWorks assembly plan below.
+
 ## Planned contents
 
 ```
