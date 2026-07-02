@@ -1,0 +1,34 @@
+{
+  "product": "wood-shell-tongue-drum",
+  "pipeline": "studiopipeline:evolution-pipeline",
+  "stage": "0-intake",
+  "master_revision": "rev-A (pre-commit intake, 2026-07-01)",
+  "generated": "2026-07-01",
+  "cad_masters": [
+    {
+      "path": "cad/wood-shell-tongue-drum.scad",
+      "format": "openscad-source",
+      "sha256": "d701a846f44329a595398b690165ab07ec964187416711c5692dd0064e37fa7a",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Parametric shell + soundboard envelope + tongue position/length layout reference marks (V1 Cylinder/Flat Top, Standard 16in). Renders clean. Does not model slit-routing cut geometry or gu port placement."
+    },
+    {
+      "path": "wood-shell-tongue-drum-design-table.xlsx",
+      "format": "design-table",
+      "sha256": "411ed770bbc4f5b99388d1c6949b29f59cefa4d90490531f7d634721a3a819e8",
+      "authority": "pending_measurement",
+      "lossy": false,
+      "notes": "Current dimensional authority (190-formula parametric workbook); unmeasured, not build-ready until Phase 1 calibration."
+    },
+    {
+      "path": "wolfram/wood-shell-tongue-drum-wolfram-model.wl",
+      "format": "wolfram-source",
+      "sha256": "665b52f6fdc0c0d6a58892e9243615d0b4fb6f10e35902e2b57873f9f2833729",
+      "authority": "derived_preview",
+      "lossy": false,
+      "notes": "Source-only (not executed); L2 evidence."
+    }
+  ],
+  "notes": "OpenSCAD source is a planning envelope layered on top of the design-table authority; no STEP/SolidWorks export yet (cad/README.md: SolidWorks deferred until Phase 1 measurements are folded back into the workbook). Gate A (Alpha workspace compile) not yet run."
+}
